@@ -601,3 +601,31 @@ dd{ margin:0; color:rgba(18,18,18,.68); }
   .pill{ font-size:12px; }
   .btn{ padding:12px 12px; }
 }
+/* ===== Text wrapping: Korean looks natural, English/URLs won't overflow ===== */
+h1, h2, h3, p, li, dt, dd, .pill, .titem{
+  word-break: keep-all;     /* ✅ 한국어 단어 쪼개짐 방지 */
+  line-break: strict;
+}
+p, li, dd{
+  overflow-wrap: anywhere;  /* ✅ 긴 영어/URL은 화면 밖으로 안 나가게 */
+}
+
+/* ===== Section title layout fix (모바일에서 '서비/스' 같은 깨짐 제거) ===== */
+.section-title{
+  flex-wrap: wrap;          /* ✅ 폭 부족하면 줄바꿈 허용 */
+  align-items: flex-start;  /* ✅ 제목이 눌려서 깨지는 것 방지 */
+}
+.section-title h2{
+  flex: 0 0 auto;           /* ✅ 제목 영역 최소폭 확보 */
+}
+
+/* 모바일에선 아예 위/아래로 쌓아버림 (가장 깔끔) */
+@media (max-width: 720px){
+  .section-title{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .section-title p{
+    margin-top: 6px;
+  }
+}
