@@ -75,7 +75,8 @@ img{max-width:100%; display:block}
 .name span{font-size:13px; color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
 
 .navlinks{
-  display:flex; gap:18px;
+  display:none;
+  gap:18px;
   align-items:center;
   font-size:14px;
 }
