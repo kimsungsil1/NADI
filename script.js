@@ -51,3 +51,21 @@
     if (e.key === 'Escape') closeLb();
   });
 })();
+// Copy-to-clipboard
+document.addEventListener("click", async (e) => {
+  const btn = e.target.closest("[data-copy]");
+  if (!btn) return;
+  const targetSel = btn.getAttribute("data-copy");
+  const target = document.querySelector(targetSel);
+  if (!target) return;
+
+  const text = target.innerText.trim();
+  try {
+    await navigator.clipboard.writeText(text);
+    const old = btn.textContent;
+    btn.textContent = "복사 완료";
+    setTimeout(() => (btn.textContent = old), 1200);
+  } catch (_) {
+    alert("복사 실패. 텍스트를 직접 드래그해서 복사하세요.");
+  }
+});
