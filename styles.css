@@ -122,6 +122,11 @@ img{max-width:100%; display:block}
   cursor:pointer;
 }
 
+/* Hide main navigation UI */
+.navlinks,
+.mobile-menu,
+.menu-btn{display:none !important}
+
 /* Mobile menu */
 .mobile-menu{
   border:1px solid var(--border);
