@@ -74,3 +74,29 @@ document.addEventListener("click", (e) => {
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeLightbox();
 });
+// ===== Google Map iframe is often blocked inside in-app browsers (WebView). Use fallback.
+(() => {
+  const ua = navigator.userAgent || "";
+  const isWebView = /; wv\)|\bwv\b|Version\/4\.0/i.test(ua);
+  const isInApp = /(KAKAOTALK|NAVER|Daum|FBAN|FBAV|Instagram|Line|WhatsApp|WeChat|TikTok|Twitter|Pinterest)/i.test(ua);
+
+  if (isWebView || isInApp) {
+    document.documentElement.classList.add("no-embed-map");
+  }
+
+  const btn = document.querySelector("[data-copy-address]");
+  if (btn) {
+    btn.addEventListener("click", async () => {
+      const text = "서울특별시 동작구 동작대로29길 7 2층 나디뷰티";
+      try {
+        await navigator.clipboard.writeText(text);
+        const prev = btn.textContent;
+        btn.textContent = "복사됨";
+        setTimeout(() => (btn.textContent = prev), 1200);
+      } catch (e) {
+        // clipboard 막힐 때 대비
+        window.prompt("아래 주소를 복사하세요", text);
+      }
+    });
+  }
+})();
