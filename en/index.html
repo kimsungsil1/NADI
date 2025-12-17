@@ -2,22 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Nadi Beauty | Eyelash Extensions · Lash Lift · Waxing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NADI Beauty | Eyelash Extensions · Lash Lift · Waxing | Seoul</title>
+  <meta name="description" content="NADI Beauty in Seoul (Dongjak-gu). Eyelash Extensions, Lash Lift, Face/Body Waxing. Easy booking via KakaoTalk and Naver Place." />
+  <meta name="theme-color" content="#f1cdc3" />
 
-  <meta name="description" content="Nadi Beauty — Eyelash Extensions, Lash Lift, and Waxing. View pricing, portfolio, location, and book easily." />
-  <link rel="canonical" href="https://YOUR_DOMAIN.com/en/" />
-
-  <link rel="alternate" hreflang="ko" href="https://YOUR_DOMAIN.com/" />
-  <link rel="alternate" hreflang="en" href="https://YOUR_DOMAIN.com/en/" />
-  <link rel="alternate" hreflang="x-default" href="https://YOUR_DOMAIN.com/en/" />
-
+  <meta property="og:title" content="NADI Beauty | Lashes · Lift · Waxing" />
+  <meta property="og:description" content="Eyelash Extensions · Lash Lift · Waxing in Seoul. Book via KakaoTalk / Naver Place." />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Nadi Beauty | Lashes · Lift · Wax" />
-  <meta property="og:description" content="Eyelash Extensions, Lash Lift, Waxing. Booking, pricing, portfolio, location." />
-  <meta property="og:url" content="https://YOUR_DOMAIN.com/en/" />
-  <meta property="og:image" content="https://YOUR_DOMAIN.com/assets/og.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:image" content="../assets/logo.png" />
+
+  <link rel="canonical" href="https://kimsungsil1.github.io/NADI/en/" />
+  <link rel="alternate" href="https://kimsungsil1.github.io/NADI/" hreflang="ko" />
+  <link rel="alternate" href="https://kimsungsil1.github.io/NADI/en/" hreflang="en" />
+  <link rel="alternate" href="https://kimsungsil1.github.io/NADI/" hreflang="x-default" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,26 +23,26 @@
 
   <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="../styles.css" />
+  <script src="../script.js" defer></script>
 
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"BeautySalon",
-    "name":"Nadi Beauty",
-    "url":"https://YOUR_DOMAIN.com/en/",
-    "telephone":"+82-10-0000-0000",
+    "name":"NADI Beauty",
+    "url":"https://kimsungsil1.github.io/NADI/en/",
+    "telephone":"+82-507-1328-6049",
     "address":{
       "@type":"PostalAddress",
-      "streetAddress":"YOUR STREET ADDRESS",
-      "addressLocality":"City",
-      "addressRegion":"Region",
-      "postalCode":"Postal Code",
+      "streetAddress":"2F, 7 Dongjak-daero 29-gil",
+      "addressLocality":"Dongjak-gu",
+      "addressRegion":"Seoul",
       "addressCountry":"KR"
     },
-    "makesOffer":[
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Eyelash Extensions"}},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Lash Lift"}},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Waxing"}}
+    "sameAs":[
+      "https://www.instagram.com/nadi_.beauty/",
+      "https://m.place.naver.com/place/1745930795/home?entry=pll",
+      "http://pf.kakao.com/_dgTAxj"
     ]
   }
   </script>
@@ -53,302 +51,247 @@
 <body>
   <a class="skip" href="#main">Skip to content</a>
 
-  <header class="topbar" role="banner">
-    <div class="container topbar__inner">
-      <a class="brand" href="/en/" aria-label="Nadi Beauty Home">
-        <span class="brand__mark">N</span>
-        <span class="brand__text">
-          <span class="brand__name">NADI BEAUTY</span>
-          <span class="brand__tag">Lashes · Lift · Wax</span>
-        </span>
-      </a>
+  <header>
+    <div class="container">
+      <div class="navbar">
+        <a class="brand" href="../">
+          <div class="mark"><img src="../assets/logo.png" alt="NADI Beauty logo" /></div>
+          <div class="name">
+            <strong>NADI</strong>
+            <span>Beauty · Lashes · Lift · Waxing</span>
+          </div>
+        </a>
 
-      <nav class="nav" aria-label="Main menu">
-        <a href="#services">Services</a>
-        <a href="#gallery">Portfolio</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#location">Location</a>
-        <a href="#faq">FAQ</a>
-      </nav>
+        <nav class="navlinks" aria-label="Primary">
+          <a href="#services">Services</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#location">Location</a>
+          <a href="#faq">FAQ</a>
+        </nav>
 
-      <div class="topbar__cta">
-        <a class="lang" href="/" aria-label="Korean page">KO</a>
-        <a class="btn btn--ghost" href="tel:+821000000000">Call</a>
-        <a class="btn btn--primary" href="#booking">Book</a>
+        <div class="nav-cta">
+          <a class="btn ghost" href="../" aria-label="Go to Korean page">KO</a>
+          <a class="btn primary" href="tel:0507-1328-6049">Call</a>
+          <button class="menu-btn" data-menu aria-expanded="false" aria-controls="mobileMenu">☰</button>
+        </div>
       </div>
 
-      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-
-    <div class="mobile" hidden>
-      <a href="#services">Services</a>
-      <a href="#gallery">Portfolio</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#location">Location</a>
-      <a href="#faq">FAQ</a>
-      <a href="/">Korean</a>
-      <a href="#booking">Book</a>
+      <div class="mobile" id="mobileMenu" data-mobile data-open="0" style="display:none">
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#location">Location</a>
+        <a href="#faq">FAQ</a>
+        <div class="row">
+          <a class="btn primary" href="tel:0507-1328-6049">Call</a>
+          <a class="btn" href="http://pf.kakao.com/_dgTAxj" target="_blank" rel="noopener">KakaoTalk</a>
+          <a class="btn" href="https://m.place.naver.com/place/1745930795/home?entry=pll" target="_blank" rel="noopener">Naver Booking</a>
+        </div>
+      </div>
     </div>
   </header>
 
   <main id="main">
-    <section class="hero" aria-label="Intro">
-      <div class="container hero__grid">
-        <div class="hero__copy">
-          <p class="pill">Eyelash Extensions · Lash Lift · Waxing</p>
-          <h1 class="hero__title">
-            Nadi Beauty<br />
-            <span class="hero__accent">Detail makes the difference</span>
-          </h1>
-          <p class="hero__desc">
-            Clean process, customized design, and clear aftercare.
-            This English page is made for international guests who search on Google.
-          </p>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="card hero-copy">
+            <div class="kicker"><b>Seoul · Dongjak-gu</b> Lash & Wax Studio</div>
+            <h1><span class="serif">NADI Beauty</span><br/>Detail changes everything</h1>
+            <p class="sub">
+              Eyelash Extensions · Lash Lift · Face/Body Waxing.
+              Clear service names and booking links for foreign customers.
+            </p>
 
-          <div class="hero__actions">
-            <a class="btn btn--primary" href="#booking">Book Now</a>
-            <a class="btn btn--ghost" href="#gallery">View Portfolio</a>
+            <div class="pills">
+              <span class="pill">Natural · Volume · Design</span>
+              <span class="pill">Clean & Safe Process</span>
+              <span class="pill">KakaoTalk Support</span>
+            </div>
+
+            <div class="hero-actions">
+              <a class="btn primary" href="http://pf.kakao.com/_dgTAxj" target="_blank" rel="noopener">KakaoTalk Consultation</a>
+              <a class="btn" href="https://m.place.naver.com/place/1745930795/home?entry=pll" target="_blank" rel="noopener">Book on Naver</a>
+              <a class="btn" href="tel:0507-1328-6049">Call 0507-1328-6049</a>
+              <a class="btn ghost" href="https://www.instagram.com/nadi_.beauty/" target="_blank" rel="noopener">Instagram</a>
+            </div>
           </div>
 
-          <div class="trust">
-            <div class="trust__item">
-              <div class="trust__k">Hygiene</div>
-              <div class="trust__v">Sanitized tools</div>
-            </div>
-            <div class="trust__item">
-              <div class="trust__k">Design</div>
-              <div class="trust__v">Curl/length/density</div>
-            </div>
-            <div class="trust__item">
-              <div class="trust__k">Booking</div>
-              <div class="trust__v">Naver / Call / DM</div>
+          <div class="card hero-visual">
+            <div class="img"></div>
+            <div class="badge">
+              <div class="t">NADI Beauty · Seoul</div>
+              <div class="m">2F, 7 Dongjak-daero 29-gil, Dongjak-gu</div>
             </div>
           </div>
-        </div>
-
-        <div class="hero__art" aria-hidden="true">
-          <div class="card card--glow">
-            <div class="card__img">
-              <div class="imgPlaceholder">YOUR PHOTO</div>
-            </div>
-            <div class="card__body">
-              <div class="card__title">Signature Lash Set</div>
-              <div class="card__sub">Natural · Long-lasting · Clean finish</div>
-              <div class="badgeRow">
-                <span class="badge">Extensions</span>
-                <span class="badge">Lash Lift</span>
-                <span class="badge">Waxing</span>
-              </div>
-            </div>
-          </div>
-          <div class="sparkle" aria-hidden="true"></div>
         </div>
       </div>
     </section>
 
-    <section id="services" class="section">
+    <section id="services">
       <div class="container">
-        <div class="section__head">
+        <div class="section-title">
           <h2>Services</h2>
-          <p>Clear service names help Google understand what you offer.</p>
+          <p>Written for Google search (clear keywords).</p>
         </div>
 
         <div class="grid3">
-          <article class="service">
+          <div class="card service">
             <h3>Eyelash Extensions</h3>
-            <p>Customized style for your eye shape: natural, defined, or volume.</p>
+            <p>Customized length, curl, and density for your desired look.</p>
             <ul>
-              <li>Consultation & design</li>
+              <li>Consultation → Design</li>
               <li>Retention-focused technique</li>
               <li>Aftercare guidance</li>
             </ul>
-          </article>
+          </div>
 
-          <article class="service">
-            <h3>Lash Lift</h3>
-            <p>Lift and shape your natural lashes with a clean, balanced curl.</p>
+          <div class="card service">
+            <h3>Lash Lift (Lash Perm)</h3>
+            <p>A clean, defined curl tailored to your lash condition.</p>
             <ul>
-              <li>Damage-minimizing approach</li>
-              <li>Customized curl direction</li>
-              <li>Aftercare included</li>
+              <li>Lash condition check</li>
+              <li>Signature curl design</li>
+              <li>Aftercare guide</li>
             </ul>
-          </article>
+          </div>
 
-          <article class="service">
+          <div class="card service">
             <h3>Waxing</h3>
-            <p>We check your skin condition first and reduce irritation as much as possible.</p>
+            <p>Face & Body waxing with aftercare support.</p>
             <ul>
-              <li>Hygienic process</li>
-              <li>Soothing care</li>
-              <li>Clear precautions</li>
+              <li>Skin condition check</li>
+              <li>Soothing / moisturizing care</li>
+              <li>Post-care instructions</li>
             </ul>
-          </article>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="gallery" class="section section--alt">
+    <section id="portfolio">
       <div class="container">
-        <div class="section__head">
+        <div class="section-title">
           <h2>Portfolio</h2>
-          <p>Replace placeholders with real photos and SEO-friendly filenames.</p>
+          <p>Upload your best Instagram photos here.</p>
         </div>
 
-        <div class="gallery" aria-label="Portfolio gallery">
-          <button class="gItem" data-full="/assets/p1.jpg" aria-label="Open photo 1"><span class="gPh">PHOTO 1</span></button>
-          <button class="gItem" data-full="/assets/p2.jpg" aria-label="Open photo 2"><span class="gPh">PHOTO 2</span></button>
-          <button class="gItem" data-full="/assets/p3.jpg" aria-label="Open photo 3"><span class="gPh">PHOTO 3</span></button>
-          <button class="gItem" data-full="/assets/p4.jpg" aria-label="Open photo 4"><span class="gPh">PHOTO 4</span></button>
-          <button class="gItem" data-full="/assets/p5.jpg" aria-label="Open photo 5"><span class="gPh">PHOTO 5</span></button>
-          <button class="gItem" data-full="/assets/p6.jpg" aria-label="Open photo 6"><span class="gPh">PHOTO 6</span></button>
+        <div class="gallery">
+          <div class="gitem" role="button" tabindex="0" data-gallery-item data-cap="Eyelash Extensions · Natural Design">
+            <img src="../assets/work-1.jpg" alt="Eyelash extensions result photo" loading="lazy" />
+            <div class="gcap">Eyelash Extensions · Natural</div>
+          </div>
+
+          <div class="gitem" role="button" tabindex="0" data-gallery-item data-cap="Lash Lift · Signature Perm">
+            <img src="../assets/work-2.jpg" alt="Lash lift result photo" loading="lazy" />
+            <div class="gcap">Lash Lift · Signature</div>
+          </div>
+
+          <div class="gitem" role="button" tabindex="0" data-gallery-item data-cap="Interior · Clean & Cozy">
+            <img src="../assets/interior.jpg" alt="Studio interior photo" loading="lazy" />
+            <div class="gcap">Interior · Clean Mood</div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="pricing" class="section">
+    <section id="location">
       <div class="container">
-        <div class="section__head">
-          <h2>Pricing</h2>
-          <p>Example prices — replace with your real menu.</p>
-        </div>
-
-        <div class="pricing">
-          <div class="priceCard">
-            <h3>Extensions</h3>
-            <p class="price">KRW 00,000+</p>
-            <ul>
-              <li>Natural / Defined / Volume</li>
-              <li>Refill available</li>
-              <li>Customized consultation</li>
-            </ul>
-          </div>
-
-          <div class="priceCard priceCard--featured">
-            <h3>Lash Lift</h3>
-            <p class="price">KRW 00,000+</p>
-            <ul>
-              <li>Customized curl</li>
-              <li>Damage-minimizing</li>
-              <li>Aftercare included</li>
-            </ul>
-          </div>
-
-          <div class="priceCard">
-            <h3>Waxing</h3>
-            <p class="price">KRW 00,000+</p>
-            <ul>
-              <li>Depends on area</li>
-              <li>Soothing care</li>
-              <li>Clear precautions</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="booking" class="section section--alt">
-      <div class="container booking">
-        <div>
-          <h2>Booking</h2>
-          <p>International guests usually book from a single button. Keep it simple.</p>
-          <div class="booking__actions">
-            <a class="btn btn--primary" href="https://booking.naver.com/XXXX" target="_blank" rel="noopener">Book (Naver)</a>
-            <a class="btn btn--ghost" href="tel:+821000000000">Call</a>
-            <a class="btn btn--ghost" href="https://www.instagram.com/YOUR_ID" target="_blank" rel="noopener">Instagram DM</a>
-          </div>
-        </div>
-
-        <div class="booking__card">
-          <h3>First-time guide</h3>
-          <ol>
-            <li>Tell us your preferred style.</li>
-            <li>We check your lashes/skin and suggest options.</li>
-            <li>We provide clear aftercare tips.</li>
-          </ol>
-        </div>
-      </div>
-    </section>
-
-    <section id="location" class="section">
-      <div class="container">
-        <div class="section__head">
+        <div class="section-title">
           <h2>Location</h2>
-          <p>Make sure address/phone/hours match your Google Business Profile.</p>
+          <p>Use Google Maps for navigation.</p>
         </div>
 
-        <div class="location">
-          <div class="locCard">
-            <h3>Nadi Beauty</h3>
-            <p class="locLine"><b>Address</b> YOUR STREET ADDRESS</p>
-            <p class="locLine"><b>Phone</b> <a href="tel:+821000000000">+82-10-0000-0000</a></p>
-            <p class="locLine"><b>Hours</b> Mon–Fri 10:00–20:00 / Sat 10:00–18:00</p>
+        <div class="info">
+          <div class="card box">
+            <h3>Contact</h3>
+            <dl class="dl">
+              <div class="row">
+                <dt>Address</dt>
+                <dd>2F, 7 Dongjak-daero 29-gil, Dongjak-gu, Seoul</dd>
+              </div>
+              <div class="row">
+                <dt>Phone</dt>
+                <dd><a href="tel:0507-1328-6049">0507-1328-6049</a></dd>
+              </div>
+              <div class="row">
+                <dt>KakaoTalk</dt>
+                <dd><a href="http://pf.kakao.com/_dgTAxj" target="_blank" rel="noopener">Open Channel</a></dd>
+              </div>
+              <div class="row">
+                <dt>Booking</dt>
+                <dd><a href="https://m.place.naver.com/place/1745930795/home?entry=pll" target="_blank" rel="noopener">Naver Place</a></dd>
+              </div>
+            </dl>
 
-            <div class="locBtns">
-              <a class="btn btn--ghost" href="https://maps.google.com/?q=YOUR_ADDRESS" target="_blank" rel="noopener">Google Maps</a>
-              <a class="btn btn--ghost" href="https://place.map.naver.com/XXXX" target="_blank" rel="noopener">Naver Place</a>
+            <div class="inline">
+              <a class="btn primary" href="http://pf.kakao.com/_dgTAxj" target="_blank" rel="noopener">KakaoTalk</a>
+              <a class="btn" href="https://m.place.naver.com/place/1745930795/home?entry=pll" target="_blank" rel="noopener">Book on Naver</a>
+              <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Seoul%20Dongjak-gu%20Dongjak-daero%2029-gil%207%202F%20NADI%20Beauty" target="_blank" rel="noopener">Google Maps</a>
             </div>
           </div>
 
-          <div class="mapWrap" aria-label="Map">
-            <div class="mapPlaceholder">MAP EMBED HERE</div>
+          <div class="card box">
+            <h3>Notes</h3>
+            <p style="margin:0;color:rgba(20,20,20,.72);font-size:14px">
+              Pricing depends on design and condition. For the fastest quote, send a photo and your desired style via KakaoTalk.
+            </p>
+            <div style="height:12px"></div>
+            <a class="btn" href="../">Korean page →</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="faq" class="section section--alt">
+    <section id="faq">
       <div class="container">
-        <div class="section__head">
+        <div class="section-title">
           <h2>FAQ</h2>
-          <p>Replace with real questions you get from customers.</p>
+          <p>Short Q&A (SEO-friendly).</p>
         </div>
 
-        <div class="faq">
+        <div class="card faq">
           <details>
-            <summary>How long do extensions last?</summary>
-            <p>It depends on your lash cycle and daily habits. We explain typical retention during consultation.</p>
+            <summary>Can foreigners book a visit?</summary>
+            <p>Yes. Use KakaoTalk or Naver Place booking link. This page is written for easy Google search.</p>
           </details>
           <details>
-            <summary>Any aftercare tips for a lash lift?</summary>
-            <p>Avoid water/steam for a period right after the treatment and follow our care guide.</p>
+            <summary>Where can I check the price?</summary>
+            <p>Prices vary by design and condition. The quickest way is KakaoTalk consultation.</p>
           </details>
           <details>
-            <summary>Is waxing OK for sensitive skin?</summary>
-            <p>We check skin condition first and advise whether it’s suitable.</p>
+            <summary>Aftercare?</summary>
+            <p>Aftercare depends on the service. We provide guidance based on your personal condition.</p>
           </details>
         </div>
       </div>
     </section>
 
-    <footer class="footer" role="contentinfo">
-      <div class="container footer__grid">
-        <div>
-          <div class="footer__brand">NADI BEAUTY</div>
-          <div class="footer__meta">
-            <div>Keep NAP consistent: Name, Address, Phone.</div>
-          </div>
-        </div>
-        <div class="footer__links">
-          <a href="#services">Services</a>
-          <a href="#booking">Booking</a>
-          <a href="#location">Location</a>
-          <a href="/">Korean</a>
-        </div>
-      </div>
-      <div class="container footer__bottom">
-        <small>© <span id="y"></span> Nadi Beauty. All rights reserved.</small>
-      </div>
-    </footer>
-
-    <dialog class="lightbox" aria-label="View photo">
-      <button class="lbClose" aria-label="Close">×</button>
-      <img class="lbImg" alt="Portfolio photo" />
-    </dialog>
-
+    <div class="lightbox" data-lightbox aria-hidden="true">
+      <button class="close" data-lightbox-close aria-label="Close">✕</button>
+      <figure>
+        <img data-lightbox-img alt="" />
+        <figcaption data-lightbox-cap></figcaption>
+      </figure>
+    </div>
   </main>
 
-  <script src="/script.js" defer></script>
+  <footer>
+    <div class="container">
+      <div class="foot">
+        <div>
+          <div style="font-weight:700">NADI Beauty</div>
+          <div>2F, 7 Dongjak-daero 29-gil, Dongjak-gu, Seoul</div>
+          <div><a href="tel:0507-1328-6049">0507-1328-6049</a> · <a href="http://pf.kakao.com/_dgTAxj" target="_blank" rel="noopener">KakaoTalk</a></div>
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap">
+          <a class="btn" href="https://www.instagram.com/nadi_.beauty/" target="_blank" rel="noopener">Instagram</a>
+          <a class="btn" href="https://m.place.naver.com/place/1745930795/home?entry=pll" target="_blank" rel="noopener">Naver Place</a>
+          <a class="btn ghost" href="../">Korean</a>
+        </div>
+      </div>
+      <div style="margin-top:12px;color:rgba(20,20,20,.52)">© <span id="y"></span> NADI Beauty. All rights reserved.</div>
+      <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+    </div>
+  </footer>
 </body>
 </html>
