@@ -46,7 +46,7 @@ img{max-width:100%; display:block}
 
 /* Header */
 .site-header{
-  position:sticky; top:0; z-index:50;
+  position:static;
   backdrop-filter:saturate(140%) blur(14px);
   background:rgba(248,239,236,.70);
   border-bottom:1px solid var(--border);
