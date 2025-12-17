@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://YOUR_DOMAIN.com/sitemap.xml
+Sitemap: https://kimsungsil1.github.io/NADI/sitemap.xml
