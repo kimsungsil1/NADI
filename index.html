@@ -2,64 +2,60 @@
 <html lang="ko">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>나디뷰티 | 속눈썹연장 · 속눈썹펌 · 왁싱</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>나디뷰티 | 속눈썹연장 · 속눈썹펌 · 왁싱 | 동작구 이수/사당</title>
+  <meta name="description" content="서울 동작구 나디뷰티. 속눈썹연장, 속눈썹펌(래쉬리프트), 페이스·바디 왁싱. 외국인 고객도 쉽게 예약할 수 있도록 안내합니다." />
+  <meta name="theme-color" content="#f1cdc3" />
 
-  <!-- ✅ SEO 기본 -->
-  <meta name="description" content="나디뷰티(Nadi Beauty) — 속눈썹연장, 속눈썹펌(래쉬리프트), 왁싱 전문. 예약·가격·위치·후기·포트폴리오를 한 번에 확인하세요." />
-  <link rel="canonical" href="https://YOUR_DOMAIN.com/" />
-
-  <!-- ✅ 다국어(번역/검색 품질 향상) -->
-  <link rel="alternate" hreflang="ko" href="https://YOUR_DOMAIN.com/" />
-  <link rel="alternate" hreflang="en" href="https://YOUR_DOMAIN.com/en/" />
-  <link rel="alternate" hreflang="x-default" href="https://YOUR_DOMAIN.com/en/" />
-
-  <!-- ✅ 소셜 미리보기 -->
+  <!-- Open Graph -->
+  <meta property="og:title" content="NADI Beauty (나디뷰티) | Lashes · Lift · Waxing" />
+  <meta property="og:description" content="Eyelash Extensions · Lash Lift · Waxing in Seoul (Dongjak-gu). Book via KakaoTalk / Naver Place." />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="나디뷰티 | 속눈썹연장 · 속눈썹펌 · 왁싱" />
-  <meta property="og:description" content="속눈썹연장, 래쉬리프트, 왁싱 전문. 예약/가격/위치/포트폴리오." />
-  <meta property="og:url" content="https://YOUR_DOMAIN.com/" />
-  <meta property="og:image" content="https://YOUR_DOMAIN.com/assets/og.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:image" content="./assets/logo.png" />
 
-  <!-- ✅ 성능 -->
+  <!-- Canonical / hreflang (GitHub Pages 기준. 나중에 도메인 붙이면 여기만 바꿔) -->
+  <link rel="canonical" href="https://kimsungsil1.github.io/NADI/" />
+  <link rel="alternate" href="https://kimsungsil1.github.io/NADI/" hreflang="ko" />
+  <link rel="alternate" href="https://kimsungsil1.github.io/NADI/en/" hreflang="en" />
+  <link rel="alternate" href="https://kimsungsil1.github.io/NADI/" hreflang="x-default" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet" />
 
   <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="./styles.css" />
+  <script src="./script.js" defer></script>
 
-  <!-- ✅ 구조화데이터(구글 로컬/지도/리치결과) -->
+  <!-- LocalBusiness Schema -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "BeautySalon",
-    "name": "나디뷰티 (Nadi Beauty)",
-    "url": "https://YOUR_DOMAIN.com/",
-    "image": "https://YOUR_DOMAIN.com/assets/og.jpg",
-    "telephone": "+82-10-0000-0000",
-    "priceRange": "₩₩",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "도로명 주소를 입력하세요",
-      "addressLocality": "도시",
-      "addressRegion": "시/도",
-      "postalCode": "우편번호",
-      "addressCountry": "KR"
+    "@context":"https://schema.org",
+    "@type":"BeautySalon",
+    "name":"나디뷰티 (NADI Beauty)",
+    "url":"https://kimsungsil1.github.io/NADI/",
+    "image":[
+      "https://kimsungsil1.github.io/NADI/assets/logo.png"
+    ],
+    "telephone":"+82-507-1328-6049",
+    "priceRange":"₩₩",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"동작대로29길 7 2층",
+      "addressLocality":"동작구",
+      "addressRegion":"서울특별시",
+      "addressCountry":"KR"
     },
-    "openingHoursSpecification": [
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "10:00", "closes": "20:00" },
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday"], "opens": "10:00", "closes": "18:00" }
+    "sameAs":[
+      "https://www.instagram.com/nadi_.beauty/",
+      "https://m.place.naver.com/place/1745930795/home?entry=pll",
+      "http://pf.kakao.com/_dgTAxj"
     ],
-    "sameAs": [
-      "https://place.map.naver.com/XXXX",
-      "https://www.instagram.com/YOUR_ID"
-    ],
-    "makesOffer": [
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "속눈썹연장 (Eyelash Extensions)" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "속눈썹펌/래쉬리프트 (Lash Lift)" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "왁싱 (Waxing)" } }
+    "makesOffer":[
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"속눈썹연장 (Eyelash Extensions)"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"속눈썹펌/래쉬리프트 (Lash Lift)"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"왁싱 (Waxing)"}}
     ]
   }
   </script>
@@ -68,335 +64,284 @@
 <body>
   <a class="skip" href="#main">본문 바로가기</a>
 
-  <header class="topbar" role="banner">
-    <div class="container topbar__inner">
-      <a class="brand" href="/" aria-label="나디뷰티 홈">
-        <span class="brand__mark">N</span>
-        <span class="brand__text">
-          <span class="brand__name">NADI BEAUTY</span>
-          <span class="brand__tag">Lashes · Lift · Wax</span>
-        </span>
-      </a>
+  <header>
+    <div class="container">
+      <div class="navbar">
+        <a class="brand" href="./">
+          <div class="mark"><img src="./assets/logo.png" alt="NADI Beauty logo" /></div>
+          <div class="name">
+            <strong>NADI</strong>
+            <span>Beauty · Lashes · Lift · Waxing</span>
+          </div>
+        </a>
 
-      <nav class="nav" aria-label="메인 메뉴">
-        <a href="#services">서비스</a>
-        <a href="#gallery">포트폴리오</a>
-        <a href="#pricing">가격</a>
-        <a href="#location">오시는길</a>
-        <a href="#faq">FAQ</a>
-      </nav>
+        <nav class="navlinks" aria-label="Primary">
+          <a href="#services">서비스</a>
+          <a href="#portfolio">포트폴리오</a>
+          <a href="#location">오시는 길</a>
+          <a href="#faq">FAQ</a>
+        </nav>
 
-      <div class="topbar__cta">
-        <a class="lang" href="/en/" aria-label="English page">EN</a>
-        <a class="btn btn--ghost" href="tel:+821000000000">전화</a>
-        <a class="btn btn--primary" href="#booking">예약</a>
+        <div class="nav-cta">
+          <a class="btn ghost" href="./en/" aria-label="Go to English page">EN</a>
+          <a class="btn primary" href="tel:0507-1328-6049">전화 예약</a>
+          <button class="menu-btn" data-menu aria-expanded="false" aria-controls="mobileMenu">☰</button>
+        </div>
       </div>
 
-      <button class="hamburger" aria-label="메뉴 열기" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-
-    <div class="mobile" hidden>
-      <a href="#services">서비스</a>
-      <a href="#gallery">포트폴리오</a>
-      <a href="#pricing">가격</a>
-      <a href="#location">오시는길</a>
-      <a href="#faq">FAQ</a>
-      <a href="/en/">English</a>
-      <a href="#booking">예약</a>
+      <div class="mobile" id="mobileMenu" data-mobile data-open="0" style="display:none">
+        <a href="#services">서비스</a>
+        <a href="#portfolio">포트폴리오</a>
+        <a href="#location">오시는 길</a>
+        <a href="#faq">FAQ</a>
+        <div class="row">
+          <a class="btn primary" href="tel:0507-1328-6049">전화</a>
+          <a class="btn" href="http://pf.kakao.com/_dgTAxj" target="_blank" rel="noopener">카카오톡 상담</a>
+          <a class="btn" href="https://m.place.naver.com/place/1745930795/home?entry=pll" target="_blank" rel="noopener">네이버 예약</a>
+        </div>
+      </div>
     </div>
   </header>
 
   <main id="main">
-    <section class="hero" aria-label="소개">
-      <div class="container hero__grid">
-        <div class="hero__copy">
-          <p class="pill">속눈썹연장 · 속눈썹펌 · 왁싱 전문</p>
-          <h1 class="hero__title">
-            나디뷰티<br />
-            <span class="hero__accent">섬세함이 결과를 바꿉니다</span>
-          </h1>
-          <p class="hero__desc">
-            자연스러운 디자인, 유지력, 위생·안전 프로세스를 기본으로 합니다.
-            외국인 고객도 쉽게 예약할 수 있도록 <b>영문 페이지</b>와 <b>명확한 서비스 안내</b>를 제공합니다.
-          </p>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="card hero-copy">
+            <div class="kicker"><b>서울 동작구</b> 속눈썹 · 왁싱 전문</div>
+            <h1>
+              <span class="serif">나디뷰티</span><br/>
+              섬세함이 결과를 바꿉니다
+            </h1>
+            <p class="sub">
+              속눈썹연장 · 래쉬리프트(속눈썹펌) · 페이스/바디 왁싱.
+              외국인 고객도 구글에서 쉽게 찾고 예약할 수 있도록 영문 페이지와 명확한 안내를 제공합니다.
+            </p>
 
-          <div class="hero__actions">
-            <a class="btn btn--primary" href="#booking">지금 예약하기</a>
-            <a class="btn btn--ghost" href="#gallery">시술 사진 보기</a>
+            <div class="pills" aria-label="Highlights">
+              <span class="pill">Natural · Volume · Design</span>
+              <span class="pill">Clean & Safe Process</span>
+              <span class="pill">KakaoTalk 상담</span>
+              <span class="pill">Naver Place 예약</span>
+            </div>
+
+            <div class="hero-actions">
+              <a class="btn primary" href="http://pf.kakao.com/_dgTAxj" target="_blank" rel="noopener">카카오톡 상담</a>
+              <a class="btn" href="https://m.place.naver.com/place/1745930795/home?entry=pll" target="_blank" rel="noopener">네이버 예약</a>
+              <a class="btn" href="tel:0507-1328-6049">전화 0507-1328-6049</a>
+              <a class="btn ghost" href="https://www.instagram.com/nadi_.beauty/" target="_blank" rel="noopener">Instagram</a>
+            </div>
           </div>
 
-          <div class="trust">
-            <div class="trust__item">
-              <div class="trust__k">위생</div>
-              <div class="trust__v">소독/1회용 원칙</div>
-            </div>
-            <div class="trust__item">
-              <div class="trust__k">디자인</div>
-              <div class="trust__v">맞춤 컬/길이/밀도</div>
-            </div>
-            <div class="trust__item">
-              <div class="trust__k">예약</div>
-              <div class="trust__v">네이버/전화/DM</div>
+          <div class="card hero-visual" aria-label="Interior photo">
+            <div class="img"></div>
+            <div class="badge">
+              <div class="t">NADI Beauty · Seoul</div>
+              <div class="m">서울특별시 동작구 동작대로29길 7, 2층</div>
             </div>
           </div>
-        </div>
-
-        <div class="hero__art" aria-hidden="true">
-          <div class="card card--glow">
-            <div class="card__img">
-              <!-- 여기에 실제 샵/시술 사진 넣으면 SEO+전환이 확 올라갑니다 -->
-              <div class="imgPlaceholder">YOUR PHOTO</div>
-            </div>
-            <div class="card__body">
-              <div class="card__title">Signature Lash Set</div>
-              <div class="card__sub">자연스러운 볼륨 · 또렷한 라인</div>
-              <div class="badgeRow">
-                <span class="badge">Extensions</span>
-                <span class="badge">Lash Lift</span>
-                <span class="badge">Waxing</span>
-              </div>
-            </div>
-          </div>
-          <div class="sparkle" aria-hidden="true"></div>
         </div>
       </div>
     </section>
 
-    <section id="services" class="section">
+    <section id="services">
       <div class="container">
-        <div class="section__head">
+        <div class="section-title">
           <h2>서비스</h2>
           <p>구글 검색에 잘 잡히도록 서비스명을 명확히 표기했습니다.</p>
         </div>
 
         <div class="grid3">
-          <article class="service">
-            <h3>속눈썹연장 (Eyelash Extensions)</h3>
+          <div class="card service">
+            <h3>속눈썹연장 <span style="font-weight:400;color:rgba(20,20,20,.58)">(Eyelash Extensions)</span></h3>
             <p>원하는 느낌(자연/또렷/볼륨)에 맞춰 길이·컬·밀도를 디자인합니다.</p>
             <ul>
               <li>상담 → 디자인 제안</li>
               <li>유지력 중심 시술</li>
               <li>클렌징/주의사항 안내</li>
             </ul>
-          </article>
+            <div class="mini">
+              <span class="tag">Natural</span><span class="tag">Volume</span><span class="tag">Design</span>
+            </div>
+          </div>
 
-          <article class="service">
-            <h3>속눈썹펌/래쉬리프트 (Lash Lift)</h3>
-            <p>눈매·모발 상태에 따라 컬 강도와 방향을 조절합니다.</p>
+          <div class="card service">
+            <h3>속눈썹펌/래쉬리프트 <span style="font-weight:400;color:rgba(20,20,20,.58)">(Lash Lift)</span></h3>
+            <p>속눈썹 결을 살려 또렷하게. 시술 후 관리까지 깔끔하게 안내합니다.</p>
             <ul>
-              <li>손상 최소화 설계</li>
-              <li>자연스러운 컬 라인</li>
-              <li>애프터케어 제공</li>
+              <li>모 상태 확인</li>
+              <li>컬 라인 맞춤</li>
+              <li>애프터케어 가이드</li>
             </ul>
-          </article>
+            <div class="mini">
+              <span class="tag">Signature Perm</span><span class="tag">Clean Finish</span>
+            </div>
+          </div>
 
-          <article class="service">
-            <h3>왁싱 (Waxing)</h3>
-            <p>피부 컨디션을 확인하고 자극을 줄이는 루틴으로 진행합니다.</p>
+          <div class="card service">
+            <h3>왁싱 <span style="font-weight:400;color:rgba(20,20,20,.58)">(Waxing)</span></h3>
+            <p>페이스/바디 왁싱. 민감도에 맞춰 진행하고 사후 케어를 안내합니다.</p>
             <ul>
-              <li>위생 관리</li>
-              <li>진정 케어</li>
+              <li>피부 컨디션 체크</li>
+              <li>진정/보습 케어</li>
               <li>주의사항 안내</li>
             </ul>
-          </article>
+            <div class="mini">
+              <span class="tag">Face</span><span class="tag">Body</span><span class="tag">After Care</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="gallery" class="section section--alt">
+    <section>
       <div class="container">
-        <div class="section__head">
+        <div class="split">
+          <div class="card about">
+            <h3>나디뷰티의 무드</h3>
+            <p>
+              로고의 블랙 & 핑크, 실내의 아치 라인, 우드 톤의 편안함을 그대로 웹에 옮겼습니다.
+              과하게 꾸미지 않고 “깔끔하게 예쁜” 톤으로 신뢰를 만드는 디자인입니다.
+            </p>
+          </div>
+
+          <div class="card arch" aria-label="Exterior photo">
+            <div class="img"></div>
+            <div class="frame" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio">
+      <div class="container">
+        <div class="section-title">
           <h2>포트폴리오</h2>
-          <p>실제 사진으로 교체하세요. 파일명도 SEO에 영향 있습니다. 예: <b>nadi-lash-extension-natural.jpg</b></p>
+          <p>인스타 대표 컷을 넣어두면 구글 이미지 검색에도 노출됩니다.</p>
         </div>
 
-        <div class="gallery" aria-label="시술 사진 갤러리">
-          <button class="gItem" data-full="/assets/p1.jpg" aria-label="포트폴리오 1 크게 보기">
-            <span class="gPh">PHOTO 1</span>
-          </button>
-          <button class="gItem" data-full="/assets/p2.jpg" aria-label="포트폴리오 2 크게 보기">
-            <span class="gPh">PHOTO 2</span>
-          </button>
-          <button class="gItem" data-full="/assets/p3.jpg" aria-label="포트폴리오 3 크게 보기">
-            <span class="gPh">PHOTO 3</span>
-          </button>
-          <button class="gItem" data-full="/assets/p4.jpg" aria-label="포트폴리오 4 크게 보기">
-            <span class="gPh">PHOTO 4</span>
-          </button>
-          <button class="gItem" data-full="/assets/p5.jpg" aria-label="포트폴리오 5 크게 보기">
-            <span class="gPh">PHOTO 5</span>
-          </button>
-          <button class="gItem" data-full="/assets/p6.jpg" aria-label="포트폴리오 6 크게 보기">
-            <span class="gPh">PHOTO 6</span>
-          </button>
-        </div>
+        <div class="gallery" aria-label="Gallery">
+          <div class="gitem" role="button" tabindex="0" data-gallery-item data-cap="Eyelash Extensions · Natural Design">
+            <img src="./assets/work-1.jpg" alt="Eyelash extensions result photo" loading="lazy" />
+            <div class="gcap">Eyelash Extensions · Natural</div>
+          </div>
 
-        <div class="note">
-          <b>팁:</b> 사진은 “촬영날짜/서비스명/지역”이 들어간 캡션(ALT/텍스트)과 함께 올리면 구글 이미지 검색 유입이 늘어납니다.
+          <div class="gitem" role="button" tabindex="0" data-gallery-item data-cap="Lash Lift · Signature Perm">
+            <img src="./assets/work-2.jpg" alt="Lash lift result photo" loading="lazy" />
+            <div class="gcap">Lash Lift · Signature</div>
+          </div>
+
+          <div class="gitem" role="button" tabindex="0" data-gallery-item data-cap="Interior · Clean & Cozy">
+            <img src="./assets/interior.jpg" alt="Studio interior photo" loading="lazy" />
+            <div class="gcap">Interior · Clean Mood</div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="pricing" class="section">
+    <section id="location">
       <div class="container">
-        <div class="section__head">
-          <h2>가격</h2>
-          <p>가격은 예시입니다. 실제 금액/구성을 입력하세요.</p>
-        </div>
-
-        <div class="pricing">
-          <div class="priceCard">
-            <h3>속눈썹연장</h3>
-            <p class="price">₩ 00,000~</p>
-            <ul>
-              <li>자연/또렷/볼륨 옵션</li>
-              <li>리터치 가능</li>
-              <li>상담 후 맞춤</li>
-            </ul>
-          </div>
-
-          <div class="priceCard priceCard--featured">
-            <h3>래쉬리프트</h3>
-            <p class="price">₩ 00,000~</p>
-            <ul>
-              <li>컬/방향 맞춤</li>
-              <li>손상 최소화</li>
-              <li>케어 안내 포함</li>
-            </ul>
-          </div>
-
-          <div class="priceCard">
-            <h3>왁싱</h3>
-            <p class="price">₩ 00,000~</p>
-            <ul>
-              <li>부위별 상이</li>
-              <li>진정 케어</li>
-              <li>주의사항 안내</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="booking" class="section section--alt">
-      <div class="container booking">
-        <div>
-          <h2>예약</h2>
-          <p>외국인 고객은 보통 구글 검색 → 사이트 → 예약 버튼으로 들어옵니다. 버튼은 3개만 두세요.</p>
-          <div class="booking__actions">
-            <a class="btn btn--primary" href="https://booking.naver.com/XXXX" target="_blank" rel="noopener">네이버 예약</a>
-            <a class="btn btn--ghost" href="tel:+821000000000">전화 예약</a>
-            <a class="btn btn--ghost" href="https://www.instagram.com/YOUR_ID" target="_blank" rel="noopener">인스타 DM</a>
-          </div>
-          <p class="fine">
-            * “YOUR_DOMAIN / 전화번호 / 네이버예약 링크 / 인스타”만 바꾸면 끝입니다.
-          </p>
-        </div>
-
-        <div class="booking__card">
-          <h3>처음 방문이라면</h3>
-          <ol>
-            <li>원하는 스타일(자연/또렷/볼륨)을 말합니다.</li>
-            <li>눈매/모발 상태 보고 옵션을 정합니다.</li>
-            <li>시술 후 관리법을 안내합니다.</li>
-          </ol>
-          <div class="miniBadges">
-            <span class="badge">Clean</span>
-            <span class="badge">Safe</span>
-            <span class="badge">Custom</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="location" class="section">
-      <div class="container">
-        <div class="section__head">
+        <div class="section-title">
           <h2>오시는 길</h2>
-          <p>구글 검색 노출은 “주소/전화/영업시간”이 사이트와 구글 비즈니스 프로필에서 일치해야 강해집니다.</p>
+          <p>외국인은 구글맵 링크가 있어야 길찾기가 바로 됩니다.</p>
         </div>
 
-        <div class="location">
-          <div class="locCard">
-            <h3>나디뷰티</h3>
-            <p class="locLine"><b>주소</b> 도로명 주소를 입력하세요</p>
-            <p class="locLine"><b>전화</b> <a href="tel:+821000000000">+82-10-0000-0000</a></p>
-            <p class="locLine"><b>영업</b> 평일 10:00–20:00 / 토 10:00–18:00 (일 휴무 예시)</p>
-            <p class="locLine"><b>주차</b> 주차 안내를 입력하세요</p>
+        <div class="info">
+          <div class="card box">
+            <h3>매장 정보</h3>
+            <dl class="dl">
+              <div class="row">
+                <dt>주소</dt>
+                <dd>서울특별시 동작구 동작대로29길 7 2층 나디뷰티</dd>
+              </div>
+              <div class="row">
+                <dt>전화</dt>
+                <dd><a href="tel:0507-1328-6049">0507-1328-6049</a></dd>
+              </div>
+              <div class="row">
+                <dt>상담</dt>
+                <dd><a href="http://pf.kakao.com/_dgTAxj" target="_blank" rel="noopener">카카오톡 채널</a></dd>
+              </div>
+              <div class="row">
+                <dt>예약</dt>
+                <dd><a href="https://m.place.naver.com/place/1745930795/home?entry=pll" target="_blank" rel="noopener">네이버플레이스</a></dd>
+              </div>
+            </dl>
 
-            <div class="locBtns">
-              <a class="btn btn--ghost" href="https://maps.google.com/?q=YOUR_ADDRESS" target="_blank" rel="noopener">Google Maps</a>
-              <a class="btn btn--ghost" href="https://place.map.naver.com/XXXX" target="_blank" rel="noopener">Naver Place</a>
+            <div class="inline">
+              <a class="btn primary" href="http://pf.kakao.com/_dgTAxj" target="_blank" rel="noopener">카카오톡 상담</a>
+              <a class="btn" href="https://m.place.naver.com/place/1745930795/home?entry=pll" target="_blank" rel="noopener">네이버 예약</a>
+              <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EB%8F%99%EC%9E%91%EA%B5%AC%20%EB%8F%99%EC%9E%91%EB%8C%80%EB%A1%9C29%EA%B8%B8%207%202%EC%B8%B5%20%EB%82%98%EB%94%94%EB%B7%B0%ED%8B%B0" target="_blank" rel="noopener">Google Maps</a>
             </div>
           </div>
 
-          <div class="mapWrap" aria-label="지도">
-            <!-- 구글맵 임베드: Google Maps에서 공유 > 지도 퍼가기 iframe 넣기 -->
-            <div class="mapPlaceholder">
-              MAP EMBED HERE
-            </div>
+          <div class="card box">
+            <h3>안내</h3>
+            <p style="margin:0;color:rgba(20,20,20,.72);font-size:14px">
+              가격은 디자인/모 상태/부위에 따라 달라질 수 있어요. 가장 정확한 안내는
+              <b>카카오톡 상담</b>으로 사진/원하는 스타일을 보내주면 빠르게 답변합니다.
+            </p>
+            <div style="height:12px"></div>
+            <p style="margin:0;color:rgba(20,20,20,.72);font-size:14px">
+              For foreign customers: please use the <b>English page</b> for clear service names and booking links.
+            </p>
+            <div style="height:12px"></div>
+            <a class="btn" href="./en/">English page →</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="faq" class="section section--alt">
+    <section id="faq">
       <div class="container">
-        <div class="section__head">
+        <div class="section-title">
           <h2>FAQ</h2>
-          <p>FAQ는 검색 유입에 직결됩니다. 실제 질문으로 바꾸세요.</p>
+          <p>구글이 좋아하는 “질문-답변” 구조로 넣었습니다.</p>
         </div>
 
-        <div class="faq">
+        <div class="card faq">
           <details>
-            <summary>속눈썹연장 유지기간은 얼마나 가나요?</summary>
-            <p>개인 모발 주기·생활 습관에 따라 달라집니다. 상담 시 평균 범위를 안내합니다.</p>
+            <summary>외국인도 예약할 수 있나요?</summary>
+            <p>가능합니다. 영어 페이지에서 서비스 설명과 링크를 제공합니다. 카카오톡으로도 상담할 수 있습니다.</p>
           </details>
           <details>
-            <summary>래쉬리프트 후 주의할 점이 있나요?</summary>
-            <p>시술 직후 일정 시간 물/스팀 노출을 피하고, 권장 케어를 따라 주세요.</p>
+            <summary>가격은 어디서 확인하나요?</summary>
+            <p>디자인/모 상태/부위에 따라 달라서 상담 후 안내가 가장 정확합니다. 네이버플레이스 또는 카카오톡으로 문의하세요.</p>
           </details>
           <details>
-            <summary>민감성 피부도 왁싱이 가능한가요?</summary>
-            <p>피부 상태를 먼저 확인하고, 자극을 줄이는 방식으로 진행 여부를 안내합니다.</p>
+            <summary>시술 후 주의사항은?</summary>
+            <p>시술 종류에 따라 달라집니다. 방문 시 개인 상태에 맞춰 클렌징/유지 관리 방법을 안내합니다.</p>
           </details>
         </div>
       </div>
     </section>
 
-    <footer class="footer" role="contentinfo">
-      <div class="container footer__grid">
-        <div>
-          <div class="footer__brand">NADI BEAUTY</div>
-          <div class="footer__meta">
-            <div>사업자/상호/대표자 정보(필요시) 입력</div>
-            <div>주소 · 전화 · 영업시간을 구글 프로필과 동일하게 유지</div>
-          </div>
-        </div>
-
-        <div class="footer__links">
-          <a href="#services">Services</a>
-          <a href="#booking">Booking</a>
-          <a href="#location">Location</a>
-          <a href="/en/">English</a>
-        </div>
-      </div>
-
-      <div class="container footer__bottom">
-        <small>© <span id="y"></span> Nadi Beauty. All rights reserved.</small>
-      </div>
-    </footer>
-
-    <!-- 라이트박스 -->
-    <dialog class="lightbox" aria-label="이미지 크게 보기">
-      <button class="lbClose" aria-label="닫기">×</button>
-      <img class="lbImg" alt="포트폴리오 이미지" />
-    </dialog>
-
+    <div class="lightbox" data-lightbox aria-hidden="true">
+      <button class="close" data-lightbox-close aria-label="Close">✕</button>
+      <figure>
+        <img data-lightbox-img alt="" />
+        <figcaption data-lightbox-cap></figcaption>
+      </figure>
+    </div>
   </main>
 
-  <script src="/script.js" defer></script>
+  <footer>
+    <div class="container">
+      <div class="foot">
+        <div>
+          <div style="font-weight:700">NADI Beauty · 나디뷰티</div>
+          <div>서울특별시 동작구 동작대로29길 7 2층</div>
+          <div><a href="tel:0507-1328-6049">0507-1328-6049</a> · <a href="http://pf.kakao.com/_dgTAxj" target="_blank" rel="noopener">KakaoTalk</a></div>
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap">
+          <a class="btn" href="https://www.instagram.com/nadi_.beauty/" target="_blank" rel="noopener">Instagram</a>
+          <a class="btn" href="https://m.place.naver.com/place/1745930795/home?entry=pll" target="_blank" rel="noopener">Naver Place</a>
+          <a class="btn ghost" href="./en/">English</a>
+        </div>
+      </div>
+      <div style="margin-top:12px;color:rgba(20,20,20,.52)">© <span id="y"></span> NADI Beauty. All rights reserved.</div>
+      <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+    </div>
+  </footer>
 </body>
 </html>
