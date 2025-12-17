@@ -1,56 +1,53 @@
 (() => {
-  const year = document.getElementById("y");
-  if (year) year.textContent = new Date().getFullYear();
-
-  const btn = document.querySelector(".hamburger");
-  const mobile = document.querySelector(".mobile");
-  if (btn && mobile) {
-    btn.addEventListener("click", () => {
-      const open = btn.getAttribute("aria-expanded") === "true";
-      btn.setAttribute("aria-expanded", String(!open));
-      mobile.hidden = open;
-    });
-
-    mobile.querySelectorAll("a").forEach(a => {
-      a.addEventListener("click", () => {
-        btn.setAttribute("aria-expanded", "false");
-        mobile.hidden = true;
-      });
+  // Mobile menu
+  const menuBtn = document.querySelector('[data-menu]');
+  const mobile = document.querySelector('[data-mobile]');
+  if (menuBtn && mobile) {
+    menuBtn.addEventListener('click', () => {
+      const open = mobile.getAttribute('data-open') === '1';
+      mobile.setAttribute('data-open', open ? '0' : '1');
+      mobile.style.display = open ? 'none' : 'block';
+      menuBtn.setAttribute('aria-expanded', open ? 'false' : 'true');
     });
   }
 
-  // Lightbox
-  const dialog = document.querySelector("dialog.lightbox");
-  const img = document.querySelector(".lbImg");
-  const closeBtn = document.querySelector(".lbClose");
-  const items = document.querySelectorAll(".gItem");
+  // Lightbox (gallery)
+  const lb = document.querySelector('[data-lightbox]');
+  const lbImg = document.querySelector('[data-lightbox-img]');
+  const lbCap = document.querySelector('[data-lightbox-cap]');
+  const lbClose = document.querySelector('[data-lightbox-close]');
 
-  if (dialog && img) {
-    items.forEach(el => {
-      el.addEventListener("click", () => {
-        const src = el.getAttribute("data-full");
-        if (!src) return;
-        img.src = src;
-        dialog.showModal();
-      });
+  const openLb = (src, cap) => {
+    if (!lb || !lbImg) return;
+    lbImg.src = src;
+    lbImg.alt = cap || 'NADI Beauty photo';
+    if (lbCap) lbCap.textContent = cap || '';
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeLb = () => {
+    if (!lb) return;
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+    if (lbImg) lbImg.src = '';
+  };
+
+  document.querySelectorAll('[data-gallery-item]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const img = btn.querySelector('img');
+      const cap = btn.getAttribute('data-cap') || '';
+      if (img) openLb(img.src, cap);
     });
+  });
 
-    const close = () => {
-      dialog.close();
-      img.removeAttribute("src");
-    };
-
-    closeBtn?.addEventListener("click", close);
-    dialog.addEventListener("click", (e) => {
-      const rect = dialog.getBoundingClientRect();
-      const inDialog =
-        rect.top <= e.clientY && e.clientY <= rect.bottom &&
-        rect.left <= e.clientX && e.clientX <= rect.right;
-      if (!inDialog) close();
-    });
-
-    window.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && dialog.open) close();
+  if (lb) {
+    lb.addEventListener('click', (e) => {
+      if (e.target === lb) closeLb();
     });
   }
+  if (lbClose) lbClose.addEventListener('click', closeLb);
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLb();
+  });
 })();
