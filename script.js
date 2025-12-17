@@ -100,4 +100,22 @@
       }
     });
   }
+
+  // Generic copy helper (문의 템플릿 등)
+  document.querySelectorAll("[data-copy]").forEach((btn) => {
+    const selector = btn.getAttribute("data-copy");
+    const target = selector ? document.querySelector(selector) : null;
+    if (!target) return;
+
+    btn.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(target.innerText.trim());
+        const prev = btn.textContent;
+        btn.textContent = "복사됨";
+        setTimeout(() => (btn.textContent = prev), 1400);
+      } catch (e) {
+        alert("복사가 허용되지 않는 환경입니다. 내용을 길게 눌러 직접 복사해 주세요.\n\n" + target.innerText.trim());
+      }
+    });
+  });
 })();
