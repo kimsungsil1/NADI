@@ -3,149 +3,134 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="format-detection" content="telephone=no" />
-
   <title>나디뷰티 소개 | NADI Beauty</title>
-  <meta name="description" content="나디뷰티는 기준과 시스템으로 품질을 관리하고, 가격을 숨기지 않습니다. 사람을 불안하게 하지 않는 미용, 기대와 결과가 어긋나지 않는 미용을 약속합니다." />
+  <meta name="description" content="나디뷰티 소개. 기준과 시스템으로 품질을 관리하고, 가격을 숨기지 않는 미용." />
+  <link rel="canonical" href="https://kimsungsil1.github.io/NADI/about.html" />
 
-  <!-- ✅ 프로젝트 페이지(/NADI/)에서는 절대경로(/styles.css) 쓰면 깨짐 -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
   <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="./styles.css" />
-
-  <!-- 세련된 폰트(궁서체 느낌 제거) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-
-  <style>
-    /* about 전용: 사이트 톤에 맞게 카드/타이포 정리 */
-    body { font-family: "Manrope","Noto Sans KR",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; }
-    .prose { max-width: 70ch; }
-    .prose h1{
-      margin:0 0 10px 0;
-      font-size: clamp(28px, 4vw, 44px);
-      line-height: 1.08;
-      letter-spacing: -0.04em;
-    }
-    .prose p{
-      margin: 0 0 14px 0;
-      font-size: clamp(15px, 1.7vw, 18px);
-      line-height: 1.85;
-      color: rgba(18,18,18,.72);
-    }
-    .prose strong{ color: rgba(18,18,18,.92); font-weight: 800; }
-    .sig{ margin-top: 16px; font-weight: 800; color: rgba(18,18,18,.88); }
-    .about-hero{ padding-top: 18px; padding-bottom: 22px; }
-    .about-card{ padding: 22px; border-radius: 22px; }
-    .mini-badge{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:8px 12px; border-radius: 999px;
-      border: 1px solid rgba(18,18,18,.10);
-      background: rgba(255,255,255,.60);
-      font-size: 13px; color: rgba(18,18,18,.68);
-      margin-bottom: 14px;
-      white-space: nowrap;
-    }
-    .mini-badge .dot{ width:6px; height:6px; border-radius:50%; background: rgba(18,18,18,.40); display:inline-block; }
-  </style>
+  <script src="./script.js" defer></script>
 </head>
-
 <body>
-  <!-- 헤더 -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="./index.html" aria-label="NADI Home">
-        <!-- CSS 깨져도 커지지 않게 width/height 지정 -->
-        <img class="brand-logo" src="./favicon.svg" alt="NADI logo" width="44" height="44" />
-        <span class="brand-text">
-          <span class="brand-name">NADI</span>
-          <span class="brand-sub">Beauty · Lashes · Lift · Waxing</span>
-        </span>
-      </a>
+  <a class="skip" href="#main">본문 바로가기</a>
 
-      <nav class="nav-desktop" aria-label="Primary">
-        <a href="./index.html">홈</a>
-        <a href="./about.html" class="active" aria-current="page">소개</a>
+  <header class="site-header">
+    <div class="container">
+      <div class="navbar">
+        <a class="brand" href="./" aria-label="NADI Beauty Home">
+          <div class="mark"><img src="./assets/logo.png" alt="NADI Beauty logo" /></div>
+          <div class="name">
+            <strong>NADI</strong>
+            <span>Beauty · Lashes · Lift · Waxing</span>
+          </div>
+        </a>
+
+        <nav class="navlinks" aria-label="Primary">
+          <a href="./">홈</a>
+          <a href="./about.html" class="active">소개</a>
+          <a href="./products.html">제품</a>
+          <a href="./franchise.html">프랜차이즈 문의</a>
+          <a href="./#location">오시는 길</a>
+        </nav>
+
+        <div class="nav-cta">
+          <div class="lang-toggle" aria-label="Language switch">
+            <a class="on" href="./about.html">KO</a>
+            <a href="./en/">EN</a>
+          </div>
+          <button class="menu-btn" data-menu aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">☰</button>
+        </div>
+      </div>
+
+      <div class="mobile-menu" id="mobileMenu" data-mobile hidden>
+        <a href="./">홈</a>
+        <a href="./about.html" class="active">소개</a>
         <a href="./products.html">제품</a>
         <a href="./franchise.html">프랜차이즈 문의</a>
-        <a href="./location.html">오시는 길</a>
-      </nav>
+        <a href="./#location">오시는 길</a>
 
-      <div class="header-actions">
-        <div class="lang-toggle" role="group" aria-label="Language">
-          <a class="lang is-active" href="./about.html" aria-current="true">KO</a>
-          <a class="lang" href="./en/about.html">EN</a>
+        <div class="mobile-actions">
+          <a class="btn primary" href="http://pf.kakao.com/_dgTAxj" target="_blank" rel="noopener">카카오톡 상담</a>
+          <a class="btn" href="https://m.place.naver.com/place/1745930795/home?entry=pll" target="_blank" rel="noopener">네이버 예약</a>
+          <a class="btn" href="tel:0507-1328-6049">전화</a>
         </div>
-        <button class="menu-btn" type="button" aria-label="메뉴 열기" aria-controls="mobileMenu" aria-expanded="false" data-menu-btn>☰</button>
       </div>
     </div>
-
-    <nav class="nav-mobile" id="mobileMenu" aria-label="Mobile" data-menu>
-      <a href="./index.html">홈</a>
-      <a href="./about.html" aria-current="page">소개</a>
-      <a href="./products.html">제품</a>
-      <a href="./franchise.html">프랜차이즈 문의</a>
-      <a href="./location.html">오시는 길</a>
-      <div class="nav-mobile-divider"></div>
-      <a href="tel:0507-1328-6049">전화 0507-1328-6049</a>
-      <a href="http://pf.kakao.com/_dgTAxj" target="_blank" rel="noopener">카카오톡 상담</a>
-      <a href="https://www.instagram.com/nadi_.beauty" target="_blank" rel="noopener">Instagram</a>
-    </nav>
   </header>
 
-  <!-- 본문 -->
-  <main class="container about-hero">
-    <section class="card about-card">
-      <div class="mini-badge"><span class="dot"></span> CEO Message</div>
+  <main id="main">
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>소개</h2>
+          <p>나디뷰티가 지키는 기준</p>
+        </div>
 
-      <div class="prose">
-        <h1>대표 인사말</h1>
+        <div class="card box">
+          <div class="kicker">CEO Message</div>
+          <h1 style="margin:14px 0 10px; font-size:clamp(26px,3vw,40px); line-height:1.12; letter-spacing:-.4px;">
+            사람을 불안하게 하지 않는 미용
+          </h1>
 
-        <p>나디뷰티는 “예뻐짐”보다 “불편함이 덜어지는 경험”을 먼저 만듭니다.<br>
-        미용은 기술이지만, 결과는 사람에게 남습니다.</p>
+          <p style="margin:0 0 10px; color:rgba(20,20,22,.75); max-width:70ch;">
+            나디뷰티는 “예뻐짐”보다 먼저, “불편함이 덜어지는 경험”을 만듭니다.
+          </p>
 
-        <p>그래서 우리는 감각이나 경력에 기대지 않고, <strong>기준과 시스템</strong>으로 품질을 관리합니다.<br>
-        모든 디자이너는 매월 테스트로 검증되며, 기준 미달 시 고객 응대를 제한합니다.</p>
+          <p style="margin:0 0 10px; color:rgba(20,20,22,.75); max-width:70ch;">
+            감각이나 경력에 기대지 않습니다. 기준과 시스템으로 품질을 관리합니다.
+          </p>
 
-        <p>또한 우리는 <strong>가격을 숨기지 않습니다.</strong><br>
-        모든 지점은 <strong>동일한 가격, 동일한 서비스 기준</strong>을 적용합니다.<br>
-        어디서 받든 결과와 응대가 같아야 하기 때문입니다.</p>
+          <p style="margin:0 0 10px; color:rgba(20,20,22,.75); max-width:70ch;">
+            가격을 숨기지 않습니다. 모든 지점은 동일한 가격과 동일한 서비스 기준을 적용합니다.
+          </p>
 
-        <p><strong>사람을 불안하게 하지 않는 미용. 기대와 결과가 어긋나지 않는 미용.</strong><br>
-        그 약속을 지키겠습니다.</p>
+          <p style="margin:0; font-weight:900; letter-spacing:-.2px;">
+            기대와 결과가 어긋나지 않도록, 그 약속을 지키겠습니다.
+          </p>
 
-        <div class="sig">— 나디뷰티 대표</div>
+          <div style="margin-top:14px; color:rgba(20,20,22,.72); font-weight:700;">— 나디뷰티 대표</div>
+
+          <div class="inline" style="margin-top:18px">
+            <a class="btn primary" href="http://pf.kakao.com/_dgTAxj" target="_blank" rel="noopener">카카오톡 상담</a>
+            <a class="btn" href="./#location">오시는 길</a>
+            <a class="btn link" href="./">홈으로</a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <div class="mobile-bar" aria-label="Quick actions">
+    <a class="btn primary" href="http://pf.kakao.com/_dgTAxj" target="_blank" rel="noopener">카카오톡 상담</a>
+    <a class="btn" href="https://m.place.naver.com/place/1745930795/home?entry=pll" target="_blank" rel="noopener">네이버 예약</a>
+  </div>
+
+  <footer class="footer">
     <div class="container">
-      <div class="footer-row">
-        <div class="footer-brand">NADI Beauty</div>
-        <div class="footer-meta">
-          <span>서울특별시 동작구 동작대로29길 7, 2층</span>
-          <span>Tel. 0507-1328-6049</span>
+      <div class="foot">
+        <div>
+          <div class="foot-title">NADI Beauty · 나디뷰티</div>
+          <div class="foot-sub">서울특별시 동작구 동작대로29길 7 2층</div>
+          <div class="foot-sub">
+            <a href="tel:0507-1328-6049">0507-1328-6049</a>
+            · <a href="http://pf.kakao.com/_dgTAxj" target="_blank" rel="noopener">KakaoTalk</a>
+            · <a href="https://www.instagram.com/nadi_.beauty/" target="_blank" rel="noopener">Instagram</a>
+          </div>
+        </div>
+
+        <div class="foot-links">
+          <a class="btn link" href="./about.html">소개</a>
+          <a class="btn link" href="./products.html">제품</a>
+          <a class="btn link" href="./franchise.html">프랜차이즈 문의</a>
+          <a class="btn link" href="./en/">English</a>
         </div>
       </div>
-      <div class="footer-note">© <span id="year"></span> NADI Beauty.</div>
+
+      <div class="copyright">© <span id="y"></span> NADI Beauty. All rights reserved.</div>
+      <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
     </div>
   </footer>
-
-  <script src="./script.js" defer></script>
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // script.js에 메뉴 토글이 없을 수도 있어서 최소 보정
-    (function(){
-      const btn = document.querySelector("[data-menu-btn]");
-      const menu = document.querySelector("[data-menu]");
-      if(!btn || !menu) return;
-      btn.addEventListener("click", () => {
-        const open = menu.classList.toggle("open");
-        btn.setAttribute("aria-expanded", open ? "true" : "false");
-      });
-    })();
-  </script>
 </body>
 </html>
