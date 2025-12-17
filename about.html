@@ -3,94 +3,291 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>나디뷰티 소개 | 이수역 14번출구 66m</title>
-  <meta name="description" content="나디뷰티 소개. 1:1 맞춤 상담, 위생/소독, 쾌적한 공간 관리. 이수역 14번 출구 66m." />
-  <link rel="canonical" href="https://kimsungsil1.github.io/NADI/about.html" />
+  <meta name="format-detection" content="telephone=no" />
 
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+  <title>나디뷰티 소개 | NADI Beauty</title>
+  <meta name="description" content="나디뷰티는 속눈썹연장·속눈썹펌·왁싱을 통해 겉모습뿐 아니라 마음의 불편함까지 덜어내는 공간을 지향합니다. 기준과 시스템으로 품질을 관리하고, 가격을 숨기지 않습니다." />
+
   <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="./styles.css" />
-  <script src="./script.js" defer></script>
+
+  <!-- 폰트(세련된 조합) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=SUIT:wght@400;500;600;700;800;900&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet" />
+
+  <!-- (선택) EN 페이지 만들어두면 hreflang에 맞춰줌 -->
+  <link rel="alternate" hreflang="ko" href="./about.html" />
+  <link rel="alternate" hreflang="en" href="./en/about.html" />
+
+  <meta property="og:title" content="나디뷰티 소개 | NADI Beauty" />
+  <meta property="og:description" content="사람을 불안하게 하지 않는 미용. 기대와 결과가 어긋나지 않는 미용. 나디뷰티의 방향과 기준을 소개합니다." />
+  <meta property="og:type" content="website" />
+
+  <!-- 구조화 데이터(구글용) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BeautySalon",
+    "name": "NADI Beauty (나디뷰티)",
+    "telephone": "0507-1328-6049",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "동작대로29길 7 2층",
+      "addressLocality": "동작구",
+      "addressRegion": "서울특별시",
+      "addressCountry": "KR"
+    },
+    "sameAs": [
+      "https://www.instagram.com/nadi_.beauty",
+      "http://pf.kakao.com/_dgTAxj"
+    ]
+  }
+  </script>
+
+  <style>
+    /* about.html만의 소량 보강 (기존 스타일과 충돌 최소) */
+    :root{
+      --font-sans: "SUIT", system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", Arial, sans-serif;
+      --font-display: "Playfair Display", "SUIT", serif;
+    }
+    body{ font-family: var(--font-sans); }
+    .page-title{ font-family: var(--font-sans); }
+    .display{ font-family: var(--font-display); letter-spacing:-0.01em; }
+    .lead{ color: rgba(18,18,18,.68); line-height:1.7; }
+    .about-grid{ display:grid; gap:14px; }
+    @media (min-width: 900px){
+      .about-grid{ grid-template-columns: 1.2fr .8fr; gap:18px; }
+    }
+    .quote{
+      padding:14px 16px;
+      border-radius:16px;
+      border:1px solid rgba(18,18,18,.10);
+      background: rgba(255,255,255,.65);
+    }
+    .quote strong{ font-weight:900; }
+    .kpi{ display:grid; grid-template-columns: 1fr 1fr; gap:10px; }
+    .kpi .card{ padding:14px; border-radius:16px; border:1px solid rgba(18,18,18,.10); background: rgba(255,255,255,.70); }
+    .kpi .num{ font-size:22px; font-weight:900; letter-spacing:-0.02em; }
+    .kpi .lbl{ color: rgba(18,18,18,.62); font-size:13px; margin-top:4px; line-height:1.4; }
+    .bullets{ margin:0; padding-left: 18px; }
+    .bullets li{ margin: 6px 0; }
+    .cta-row{ display:flex; flex-wrap:wrap; gap:10px; }
+    .subnote{ font-size:12px; color: rgba(18,18,18,.60); line-height:1.5; }
+  </style>
 </head>
+
 <body>
-<header>
-  <div class="container">
-    <div class="navbar">
-      <a class="brand" href="./">
-        <div class="mark"><img src="./assets/logo.png" alt="NADI Beauty logo" /></div>
-        <div class="name"><strong>NADI</strong><span>Beauty · Lashes · Lift · Waxing</span></div>
+  <a class="skip-link" href="#content" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">본문 바로가기</a>
+
+  <!-- 헤더(인덱스 흐름 유지) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="./index.html" aria-label="NADI Home">
+        <img class="brand-logo" src="./favicon.svg" alt="NADI logo" />
+        <span class="brand-text">
+          <span class="brand-name">NADI</span>
+          <span class="brand-sub">Beauty · Lashes · Lift · Waxing</span>
+        </span>
       </a>
-      <nav class="navlinks" aria-label="Primary">
-        <a href="./">홈</a>
-        <a href="./about.html">소개</a>
+
+      <nav class="nav-desktop" aria-label="Primary">
+        <a href="./index.html">홈</a>
+        <a href="./about.html" aria-current="page" class="active">소개</a>
         <a href="./products.html">제품</a>
         <a href="./franchise.html">프랜차이즈 문의</a>
-        <a href="./#location">오시는 길</a>
+        <a href="./location.html">오시는 길</a>
       </nav>
-      <div class="nav-cta">
-        <div class="lang-toggle" aria-label="Language">
-          <a class="on" href="./about.html">KO</a>
-          <a href="./en/about.html">EN</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</header>
 
-<main id="main">
-  <section class="page-hero">
-    <div class="container">
-      <div class="card wrap page-hero">
-        <div class="kicker"><b>이수역 14번출구</b> 66m · 남성시장 입구 방향</div>
-        <h1>나디뷰티 소개</h1>
-        <p>1:1 맞춤 상담으로 원하는 디자인을 정확히 맞추고, 위생·소독·청결 기준을 엄격하게 관리합니다.</p>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container">
-      <div class="page-grid">
-        <div class="card about">
-          <h3>왜 나디뷰티인가</h3>
-          <p>
-            • 🥇 네이버 리뷰 전국 1위(시군구 토탈, 유료광고 X)<br/>
-            • 🥇 소비자산업평가 동작구 우수 선정<br/>
-            • 최대 5인 속눈썹펌 동시 시술 가능<br/>
-            • KC 인증 재료 사용, 일회용 위생용품 즉시 폐기<br/>
-            • 시술 전·후 도구 소독 및 시술공간 위생 철저 관리<br/>
-            • 전문 청소업체로 매장 청결 관리
-          </p>
+      <div class="header-actions">
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <a class="lang is-active" href="./about.html" aria-current="true">KO</a>
+          <a class="lang" href="./en/about.html">EN</a>
         </div>
 
-        <div class="card about">
-          <h3>연락/예약</h3>
-          <p style="margin-bottom:10px">
-            주소: 서울특별시 동작구 동작대로29길 7 2층 나디뷰티<br/>
-            전화: <a href="tel:0507-1328-6049">0507-1328-6049</a><br/>
-            카카오톡 상담: <a href="http://pf.kakao.com/_dgTAxj" target="_blank" rel="noopener">바로가기</a><br/>
-            인스타그램: <a href="https://www.instagram.com/nadi_.beauty" target="_blank" rel="noopener">@nadi_.beauty</a>
-          </p>
-          <div class="inline">
-            <a class="btn primary" href="http://pf.kakao.com/_dgTAxj" target="_blank" rel="noopener">카카오톡 상담</a>
-            <a class="btn" href="https://m.place.naver.com/place/1745930795/home?entry=pll" target="_blank" rel="noopener">네이버 예약</a>
+        <button class="menu-btn" type="button" aria-label="메뉴 열기" aria-controls="mobileMenu" aria-expanded="false" data-menu-btn>☰</button>
+      </div>
+    </div>
+
+    <nav class="nav-mobile" id="mobileMenu" aria-label="Mobile" data-menu>
+      <a href="./index.html">홈</a>
+      <a href="./about.html" aria-current="page">소개</a>
+      <a href="./products.html">제품</a>
+      <a href="./franchise.html">프랜차이즈 문의</a>
+      <a href="./location.html">오시는 길</a>
+      <div class="nav-mobile-divider"></div>
+      <a href="tel:0507-1328-6049">전화 0507-1328-6049</a>
+      <a href="http://pf.kakao.com/_dgTAxj" target="_blank" rel="noopener">카카오톡 상담</a>
+      <a href="https://www.instagram.com/nadi_.beauty" target="_blank" rel="noopener">Instagram</a>
+    </nav>
+  </header>
+
+  <main id="content" class="container" style="padding-top:18px; padding-bottom:56px;">
+    <!-- 상단 타이틀 -->
+    <section class="section">
+      <div class="section-title">
+        <h1 class="page-title display" style="margin:0;">나디뷰티 소개</h1>
+        <p class="lead" style="margin:0; max-width:62ch;">
+          “사람을 불안하게 하지 않는 미용. 기대와 결과가 어긋나지 않는 미용.”<br />
+          나디뷰티가 운영되는 기준과 원칙을 공개합니다.
+        </p>
+      </div>
+    </section>
+
+    <!-- 본문 2열 -->
+    <section class="section about-grid" aria-label="About content">
+      <!-- 왼쪽: 소개 글 -->
+      <article class="card" style="padding:18px; border-radius:18px;">
+        <p class="lead" style="margin-top:0;">
+          나디뷰티는 미용을 통해 겉모습뿐 아니라 마음의 불편함까지 덜어내는 공간을 지향합니다.
+          많은 고객이 단순히 예뻐지기 위해서가 아니라,
+          자신감의 부족, 반복된 스트레스, 사소하지만 쌓여온 결핍을 안고 매장을 찾습니다.
+        </p>
+
+        <p class="lead">
+          우리는 그 불편함을 가볍게 여기지 않습니다.<br />
+          시술은 기술이지만, 결과는 사람에게 남기 때문입니다.
+        </p>
+
+        <hr style="border:0; border-top:1px solid rgba(18,18,18,.10); margin:16px 0;" />
+
+        <h2 style="margin:0 0 10px 0;">기준으로 관리되는 퀄리티</h2>
+        <p class="lead">
+          나디뷰티의 모든 디자이너는 매월 정기 테스트를 통해 기술과 서비스 기준을 검증받으며,
+          기준에 미달할 경우 고객 응대가 제한됩니다.<br />
+          감각이나 경력에 의존하지 않고, 기준과 시스템으로 품질을 관리합니다.
+        </p>
+
+        <h2 style="margin:18px 0 10px 0;">숨기지 않는 가격</h2>
+        <p class="lead">
+          또한 나디뷰티는 가격을 숨기지 않습니다.
+          모든 지점은 동일한 가격, 동일한 서비스 기준을 적용합니다.
+          어느 지점을 방문하더라도 같은 결과와 같은 응대를 받을 수 있어야 한다는 원칙 때문입니다.
+        </p>
+
+        <h2 style="margin:18px 0 10px 0;">신뢰가 먼저</h2>
+        <p class="lead" style="margin-bottom:0;">
+          미용은 감정과 직결되는 서비스입니다.
+          그래서 나디뷰티는 과장하지 않고, 속이지 않으며,
+          합리적이고 투명한 가격으로 신뢰를 먼저 쌓습니다.<br /><br />
+          사람을 불안하게 하지 않는 미용.<br />
+          기대와 결과가 어긋나지 않는 미용.<br />
+          그것이 나디뷰티가 선택한 방향입니다.
+        </p>
+      </article>
+
+      <!-- 오른쪽: 요약/CTA -->
+      <aside class="stack">
+        <div class="quote">
+          <strong>원칙 3가지</strong><br />
+          1) 불안을 줄이는 상담 · 시술<br />
+          2) 테스트 기반 품질 관리<br />
+          3) 투명한 가격 공개
+        </div>
+
+        <div class="kpi">
+          <div class="card">
+            <div class="num">전국 1위</div>
+            <div class="lbl">네이버 리뷰 (유료광고X, 시군구 토탈)</div>
+          </div>
+          <div class="card">
+            <div class="num">최대 5인</div>
+            <div class="lbl">속눈썹펌 동시 시술 가능</div>
+          </div>
+          <div class="card">
+            <div class="num">KC 인증</div>
+            <div class="lbl">안전한 재료 사용</div>
+          </div>
+          <div class="card">
+            <div class="num">위생/소독</div>
+            <div class="lbl">일회용품 즉시 폐기 · 도구 소독</div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-</main>
 
-<footer>
-  <div class="container">
-    <div class="foot">
-      <div>
-        <div style="font-weight:900">NADI Beauty · 나디뷰티</div>
-        <div>서울특별시 동작구 동작대로29길 7 2층</div>
+        <div class="card" style="padding:16px; border-radius:18px;">
+          <h3 style="margin:0 0 10px 0;">방문 정보</h3>
+          <ul class="bullets">
+            <li><strong>주소</strong> 서울특별시 동작구 동작대로29길 7, 2층 나디뷰티</li>
+            <li><strong>지하철</strong> 4·7호선 이수역 14번 출구 66m (도보 1분)</li>
+            <li><strong>전화</strong> <a href="tel:0507-1328-6049">0507-1328-6049</a></li>
+          </ul>
+
+          <div class="cta-row" style="margin-top:12px;">
+            <a class="btn primary" href="http://pf.kakao.com/_dgTAxj" target="_blank" rel="noopener">카카오톡 상담</a>
+            <a class="btn" href="tel:0507-1328-6049">전화</a>
+            <a class="btn" href="https://www.instagram.com/nadi_.beauty" target="_blank" rel="noopener">Instagram</a>
+            <a class="btn" href="https://www.google.com/maps/search/?api=1&query=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EB%8F%99%EC%9E%91%EA%B5%AC%20%EB%8F%99%EC%9E%91%EB%8C%80%EB%A1%9C29%EA%B8%B8%207%202%EC%B8%B5%20%EB%82%98%EB%94%94%EB%B7%B0%ED%8B%B0" target="_blank" rel="noopener">Google Maps</a>
+          </div>
+
+          <p class="subnote" style="margin:10px 0 0 0;">
+            인앱 브라우저에서 지도 임베드가 막히는 경우가 있어요. 위 “Google Maps” 버튼은 항상 열립니다.
+          </p>
+        </div>
+
+        <div class="card" style="padding:16px; border-radius:18px;">
+          <h3 style="margin:0 0 10px 0;">편의시설</h3>
+          <ul class="bullets" style="margin-bottom:0;">
+            <li>무선 인터넷</li>
+            <li>예약</li>
+            <li>대기공간</li>
+            <li>단체 이용 가능</li>
+          </ul>
+        </div>
+      </aside>
+    </section>
+
+    <!-- 하단 CTA -->
+    <section class="section">
+      <div class="card" style="padding:18px; border-radius:18px;">
+        <div class="section-title" style="margin-bottom:10px;">
+          <h2 style="margin:0;">예약/상담</h2>
+          <p class="lead" style="margin:0;">원하는 스타일과 현재 상태를 말해주면, 가능한 디자인을 기준으로 제안합니다.</p>
+        </div>
+        <div class="cta-row">
+          <a class="btn primary" href="http://pf.kakao.com/_dgTAxj" target="_blank" rel="noopener">카카오톡 상담</a>
+          <a class="btn" href="tel:0507-1328-6049">전화 예약</a>
+          <a class="btn" href="https://www.instagram.com/nadi_.beauty" target="_blank" rel="noopener">인스타 DM</a>
+          <a class="btn" href="./location.html">오시는 길</a>
+        </div>
       </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-row">
+        <div class="footer-brand">NADI Beauty</div>
+        <div class="footer-meta">
+          <span>서울특별시 동작구 동작대로29길 7, 2층</span>
+          <span>Tel. 0507-1328-6049</span>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="./index.html">홈</a>
+        <a href="./about.html" aria-current="page">소개</a>
+        <a href="./products.html">제품</a>
+        <a href="./franchise.html">프랜차이즈 문의</a>
+        <a href="./location.html">오시는 길</a>
+      </div>
+      <div class="footer-note">© <span id="year"></span> NADI Beauty. All rights reserved.</div>
     </div>
-  </div>
-</footer>
+  </footer>
+
+  <script src="./script.js" defer></script>
+  <script>
+    // year만 채움 (기존 script.js 있어도 충돌 없음)
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // 모바일 메뉴: script.js가 없어도 최소 동작
+    (function(){
+      const btn = document.querySelector("[data-menu-btn]");
+      const menu = document.querySelector("[data-menu]");
+      if(!btn || !menu) return;
+      btn.addEventListener("click", () => {
+        const open = menu.classList.toggle("open");
+        btn.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+    })();
+  </script>
 </body>
 </html>
