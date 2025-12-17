@@ -22,7 +22,7 @@
 <body>
   <a class="skip" href="#main">Skip to content</a>
 
-  <header>
+  <header class="site-header">
     <div class="container">
       <div class="navbar">
         <a class="brand" href="../">
@@ -40,19 +40,20 @@
         </nav>
 
         <div class="nav-cta">
-          <div class="lang-toggle" aria-label="Language">
+          <div class="lang-toggle" aria-label="Language switch">
             <a href="../">KO</a>
             <a class="on" href="./">EN</a>
           </div>
-          <button class="menu-btn" data-menu aria-expanded="false" aria-controls="mobileMenu">☰</button>
+          <button class="menu-btn" data-menu aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">☰</button>
         </div>
       </div>
 
-      <div class="mobile" id="mobileMenu" data-mobile data-open="0" style="display:none">
+      <div class="mobile-menu" id="mobileMenu" data-mobile hidden>
         <a href="#services">Services</a>
         <a href="#prices">Price</a>
         <a href="#location">Location</a>
-        <div class="row">
+
+        <div class="mobile-actions">
           <a class="btn primary" href="http://pf.kakao.com/_dgTAxj" target="_blank" rel="noopener">KakaoTalk</a>
           <a class="btn" href="https://m.place.naver.com/place/1745930795/home?entry=pll" target="_blank" rel="noopener">Book (Naver)</a>
           <a class="btn" href="tel:+82-507-1328-6049">Call</a>
