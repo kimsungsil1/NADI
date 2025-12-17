@@ -19,17 +19,15 @@
   <meta property="og:url" content="https://kimsungsil1.github.io/NADI/" />
   <meta property="og:image" content="./assets/logo.png" />
 
-  <!-- Font: Pretendard (세련된 기본 한글) -->
+  <!-- Font: Pretendard -->
   <link rel="preconnect" href="https://cdn.jsdelivr.net" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
 
   <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
 
-  <!-- ✅ GitHub Pages: 반드시 상대경로 -->
   <link rel="stylesheet" href="./styles.css" />
   <script src="./script.js" defer></script>
 
-  <!-- Local SEO -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -75,7 +73,7 @@
           <a href="./about.html">소개</a>
           <a href="./products.html">제품</a>
           <a href="./franchise.html">프랜차이즈 문의</a>
-          <a href="#location">오시는 길</a>
+          <a href="./#location">오시는 길</a>
         </nav>
 
         <div class="nav-cta">
@@ -95,7 +93,7 @@
         <a href="./about.html">소개</a>
         <a href="./products.html">제품</a>
         <a href="./franchise.html">프랜차이즈 문의</a>
-        <a href="#location">오시는 길</a>
+        <a href="./#location">오시는 길</a>
 
         <div class="mobile-actions">
           <a class="btn primary" href="http://pf.kakao.com/_dgTAxj" target="_blank" rel="noopener">카카오톡 상담</a>
@@ -116,7 +114,6 @@
               <b>이수역(4·7호선)</b> 14번 출구 66m · 도보 1분
             </div>
 
-            <!-- ✅ PC에서만 줄바꿈, 모바일은 자연스럽게 -->
             <h1 class="hero-title">
               나디뷰티<span class="only-desktop-br"></span>섬세함이 결과를 바꿉니다
             </h1>
@@ -266,7 +263,7 @@
       <div class="container">
         <div class="section-title">
           <h2>포트폴리오</h2>
-          <p>작업 사진은 인스타/네이버 사진과 동일하게 유지하면 신뢰가 확 올라갑니다.</p>
+          <p>작업 사진은 인스타/네이버 사진과 동일하게 유지하면 신뢰가 올라갑니다.</p>
         </div>
 
         <div class="gallery">
@@ -286,7 +283,6 @@
           </div>
         </div>
 
-        <!-- Lightbox -->
         <div class="lightbox" data-lightbox aria-hidden="true">
           <button class="close" data-lightbox-close aria-label="Close">✕</button>
           <figure>
@@ -305,7 +301,8 @@
           <p>이수역 14번출구 도보 1분 · 남성시장 입구 방향</p>
         </div>
 
-        <div class="info">
+        <!-- ✅ 여기서부터 구조를 2열 그리드로 고정 (닫는 태그 꼬임 방지) -->
+        <div class="info-grid">
           <div class="card box">
             <h3>매장 정보</h3>
             <dl class="dl">
@@ -321,7 +318,7 @@
             <div class="inline" style="margin-top:12px">
               <a class="btn primary" href="http://pf.kakao.com/_dgTAxj" target="_blank" rel="noopener">카카오톡 상담</a>
               <a class="btn" href="https://m.place.naver.com/place/1745930795/home?entry=pll" target="_blank" rel="noopener">네이버 예약</a>
-              <a class="btn link"
+              <a class="btn link" id="gmapsBtn"
                  href="https://www.google.com/maps/search/?api=1&query=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EB%8F%99%EC%9E%91%EA%B5%AC%20%EB%8F%99%EC%9E%91%EB%8C%80%EB%A1%9C29%EA%B8%B8%207%202%EC%B8%B5%20%EB%82%98%EB%94%94%EB%B7%B0%ED%8B%B0"
                  target="_blank" rel="noopener">Google Maps</a>
             </div>
@@ -333,44 +330,44 @@
           </div>
 
           <div class="card map-card">
-            <div class="map-wrap">
-  <iframe
-    class="map-iframe"
-    title="NADI Beauty Google Map"
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade"
-    src="https://maps.google.com/maps?q=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EB%8F%99%EC%9E%91%EA%B5%AC%20%EB%8F%99%EC%9E%91%EB%8C%80%EB%A1%9C29%EA%B8%B8%207%202%EC%B8%B5%20%EB%82%98%EB%94%94%EB%B7%B0%ED%8B%B0&z=17&output=embed">
-  </iframe>
+            <div class="map-wrap" data-map>
+              <iframe
+                class="map-iframe"
+                title="NADI Beauty Google Map"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://maps.google.com/maps?q=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EB%8F%99%EC%9E%91%EA%B5%AC%20%EB%8F%99%EC%9E%91%EB%8C%80%EB%A1%9C29%EA%B8%B8%207%202%EC%B8%B5%20%EB%82%98%EB%94%94%EB%B7%B0%ED%8B%B0&z=17&output=embed">
+              </iframe>
 
-  <!-- ✅ 인앱/웹뷰에서 구글맵이 막히면 이걸 보여줌 -->
-  <div class="map-fallback" role="note" aria-label="Map fallback">
-    <div class="map-fallback-inner">
-      <div class="mf-title">모바일 앱 내 브라우저에서 Google 지도 표시가 차단될 수 있습니다</div>
-      <div class="mf-sub">아래 버튼으로 지도 앱에서 열면 정확합니다.</div>
+              <div class="map-fallback" role="note" aria-label="Map fallback">
+                <div class="map-fallback-inner">
+                  <div class="mf-title">모바일 앱 내 브라우저에서는 Google 지도가 차단될 수 있습니다</div>
+                  <div class="mf-sub">아래 버튼으로 지도 앱에서 열면 정확합니다.</div>
 
-      <div class="inline">
-        <a class="btn primary"
-           href="https://www.google.com/maps/search/?api=1&query=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EB%8F%99%EC%9E%91%EA%B5%AC%20%EB%8F%99%EC%9E%91%EB%8C%80%EB%A1%9C29%EA%B8%B8%207%202%EC%B8%B5%20%EB%82%98%EB%94%94%EB%B7%B0%ED%8B%B0"
-           target="_blank" rel="noopener">Google Maps 열기</a>
+                  <div class="inline">
+                    <a class="btn primary"
+                       href="https://www.google.com/maps/search/?api=1&query=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EB%8F%99%EC%9E%91%EA%B5%AC%20%EB%8F%99%EC%9E%91%EB%8C%80%EB%A1%9C29%EA%B8%B8%207%202%EC%B8%B5%20%EB%82%98%EB%94%94%EB%B7%B0%ED%8B%B0"
+                       target="_blank" rel="noopener">Google Maps 열기</a>
 
-        <button class="btn" type="button" data-copy-address>주소 복사</button>
-        <a class="btn" href="tel:0507-1328-6049">전화</a>
-      </div>
+                    <button class="btn" type="button" data-copy-address>주소 복사</button>
+                    <a class="btn" href="tel:0507-1328-6049">전화</a>
+                  </div>
 
-      <div class="mf-mini">서울특별시 동작구 동작대로29길 7 2층 나디뷰티</div>
-    </div>
-  </div>
-</div>
+                  <div class="mf-mini">서울특별시 동작구 동작대로29길 7 2층 나디뷰티</div>
+                </div>
+              </div>
+            </div>
 
-
-        <div class="card box" style="margin-top:14px">
-          <h3>위생 · 안전 프로세스</h3>
-          <dl class="dl">
-            <div class="row"><dt>재료</dt><dd>KC 인증 재료 사용</dd></div>
-            <div class="row"><dt>일회용</dt><dd>위생용 일회용품은 사용 후 즉시 폐기</dd></div>
-            <div class="row"><dt>소독</dt><dd>시술 전·후 도구 소독 및 시술공간 위생 철저 관리</dd></div>
-            <div class="row"><dt>청결</dt><dd>전문 청소업체로 매장 청결 관리</dd></div>
-          </dl>
+            <div class="card box" style="margin-top:14px">
+              <h3>위생 · 안전 프로세스</h3>
+              <dl class="dl">
+                <div class="row"><dt>재료</dt><dd>KC 인증 재료 사용</dd></div>
+                <div class="row"><dt>일회용</dt><dd>위생용 일회용품은 사용 후 즉시 폐기</dd></div>
+                <div class="row"><dt>소독</dt><dd>시술 전·후 도구 소독 및 시술공간 위생 철저 관리</dd></div>
+                <div class="row"><dt>청결</dt><dd>전문 청소업체로 매장 청결 관리</dd></div>
+              </dl>
+            </div>
+          </div>
         </div>
       </div>
     </section>
