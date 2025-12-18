@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>결제 성공</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+    <section class="card">
+      <h1>결제가 확인되었습니다</h1>
+      <p id="summary">결제 정보를 불러오는 중...</p>
+      <a class="primary" href="booking.html">예약 확인하기</a>
+    </section>
+  </main>
+  <script>
+    const apiBase = localStorage.getItem('nadiApiBase') || 'http://localhost:3000';
+    const params = new URLSearchParams(location.search);
+    const orderId = params.get('orderId');
+    fetch(`${apiBase}/api/payment/success?orderId=${orderId}`).then(r=>r.json()).then(data=>{
+      document.getElementById('summary').textContent = data.payment ? `orderId ${orderId} / amount ${data.payment.amount}` : '결제 정보를 찾지 못했습니다';
+    });
+  </script>
+</body>
+</html>

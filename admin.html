@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NADI Admin</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+    <section class="card">
+      <h1>관리자</h1>
+      <label>비밀번호 <input type="password" id="pw"></label>
+      <button id="loadBtn" class="primary">데이터 불러오기</button>
+      <pre id="adminData" class="muted"></pre>
+    </section>
+  </main>
+  <script>
+    const apiBase = localStorage.getItem('nadiApiBase') || 'http://localhost:3000';
+    document.getElementById('loadBtn').addEventListener('click', async ()=>{
+      const pw = document.getElementById('pw').value;
+      const resp = await fetch(`${apiBase}/api/admin/overview`, {headers:{'x-admin-password': pw}});
+      const data = await resp.json();
+      document.getElementById('adminData').textContent = JSON.stringify(data, null, 2);
+    });
+  </script>
+</body>
+</html>

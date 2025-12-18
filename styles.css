@@ -565,3 +565,19 @@ dd{margin:0; color:rgba(20,20,22,.74); min-width:0}
   .card{padding:var(--card-padding-mobile);}
   .btn{height:46px; padding:0 var(--space-3);}
 }
+
+/* App pages */
+.page{max-width:960px;margin:32px auto;padding:0 var(--space-4);display:grid;gap:18px;}
+.page.grid{grid-template-columns:repeat(auto-fit,minmax(280px,1fr));}
+.card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:22px;box-shadow:var(--shadow-soft);}
+.card h2{margin-bottom:12px;}
+.primary{display:inline-block;margin-top:10px;padding:12px 18px;border-radius:12px;background:var(--accent);color:#fff;text-align:center;text-decoration:none;border:none;cursor:pointer;}
+.radio-row{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:8px;}
+.pill{display:inline-block;padding:10px 14px;border-radius:999px;background:rgba(0,0,0,.04);margin:4px 0;}
+.muted{color:rgba(20,20,22,.65);}
+.hidden{display:none;}
+.checkbox{display:flex;align-items:center;gap:8px;margin-top:8px;}
+label{display:flex;flex-direction:column;gap:6px;margin-bottom:10px;font-weight:600;color:rgba(20,20,22,.8);}
+label input,label textarea, select{padding:10px;border-radius:10px;border:1px solid var(--border);font-size:15px;}
+.mt{margin-top:8px;}
+pre{white-space:pre-wrap;word-break:break-all;}
