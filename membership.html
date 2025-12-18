@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>회원권 충전</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-content">
+      <h1>회원권 충전</h1>
+      <p>선불 지갑에 충전하고 추가 적립 혜택을 받아보세요.</p>
+    </div>
+  </header>
+
+  <main class="page grid">
+    <section class="card">
+      <h2>프로모션</h2>
+      <div class="pill">30만원 충전 +10%</div>
+      <div class="pill">50만원 충전 +15%</div>
+      <div class="pill">100만원 충전 +20%</div>
+      <label class="mt">이름 <input type="text" id="nameInput" placeholder="홍길동"></label>
+      <label>휴대폰번호 <input type="tel" id="phoneInput" placeholder="010-0000-0000"></label>
+    </section>
+
+    <section class="card">
+      <h2>충전 금액</h2>
+      <div class="radio-row">
+        <label><input type="radio" name="topup" value="300000" checked> 300,000원</label>
+        <label><input type="radio" name="topup" value="500000"> 500,000원</label>
+        <label><input type="radio" name="topup" value="1000000"> 1,000,000원</label>
+      </div>
+      <button id="topupBtn" class="primary">토스로 결제</button>
+      <p id="balanceText" class="muted"></p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    const apiBase = localStorage.getItem('nadiApiBase') || 'http://localhost:3000';
+    const balanceText = document.getElementById('balanceText');
+    let customerId = null;
+    async function ensureCustomer() {
+      const phone = document.getElementById('phoneInput').value;
+      const name = document.getElementById('nameInput').value;
+      const resp = await fetch(`${apiBase}/api/customers/lookup`, {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({phone, name})});
+      const customer = await resp.json();
+      customerId = customer.id;
+      const wallet = await fetch(`${apiBase}/api/wallet?phone=${phone}`).then(r=>r.json());
+      balanceText.textContent = `현재 잔액: ${(wallet.wallet?.balance || 0).toLocaleString()}원`;
+    }
+
+    document.getElementById('phoneInput').addEventListener('blur', ensureCustomer);
+
+    document.getElementById('topupBtn').addEventListener('click', async () => {
+      if (!customerId) await ensureCustomer();
+      const selectedAmount = document.querySelector('input[name="topup"]:checked').value;
+      const product = await fetch(`${apiBase}/api/wallet/topup/init`, {
+        method:'POST', headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({customerId, topupProductId: await mapTopupId(selectedAmount)})
+      }).then(r=>r.json());
+      balanceText.innerHTML = `결제 금액 ${selectedAmount}원<br>orderId: ${product.orderId}`;
+    });
+
+    async function mapTopupId(amount) {
+      // seed 순서 매핑
+      if (amount === '300000') return (await fetchTopups())[0].id;
+      if (amount === '500000') return (await fetchTopups())[1].id;
+      return (await fetchTopups())[2].id;
+    }
+    let cachedTopups = null;
+    async function fetchTopups(){
+      if (cachedTopups) return cachedTopups;
+      cachedTopups = await fetch(`${apiBase}/api/wallet/topups`).then(r=>r.json()).catch(()=>[]);
+      return cachedTopups;
+    }
+  </script>
+</body>
+</html>
