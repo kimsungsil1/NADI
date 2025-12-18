@@ -17,10 +17,23 @@
   <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="../styles.css" />
   <script src="../script.js" defer></script>
+  <script src="../assets/nav.js" defer></script>
 </head>
 
 <body>
   <a class="skip" href="#main">Skip to content</a>
+  <div id="global-nav">
+    <noscript class="cta-noscript">
+      <style>
+        .cta-noscript { display:flex; flex-wrap:wrap; gap:8px; padding:10px 16px; background:#f7e7e3; border-bottom:1px solid #eadedb; }
+        .cta-noscript a { display:inline-flex; align-items:center; padding:8px 12px; border-radius:6px; border:1px solid #d7c6c1; color:#5c4330; text-decoration:none; font-weight:600; }
+      </style>
+      <a href="../booking.html">Book</a>
+      <a href="../membership.html">Membership</a>
+      <a href="../giftcard.html">Gift Card</a>
+      <a href="../ai.html">AI Design</a>
+    </noscript>
+  </div>
 
   <header class="site-header">
     <div class="container">
@@ -223,6 +236,8 @@
       </div>
     </section>
   </main>
+
+  <div id="global-footer-links"></div>
 
   <div class="mobile-bar" aria-label="Quick actions">
     <a class="btn primary" href="http://pf.kakao.com/_dgTAxj" target="_blank" rel="noopener">KakaoTalk</a>
