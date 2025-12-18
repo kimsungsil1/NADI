@@ -12,9 +12,22 @@
   <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="./styles.css" />
   <script src="./script.js" defer></script>
+  <script src="./assets/nav.js" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">본문 바로가기</a>
+  <div id="global-nav">
+    <noscript class="cta-noscript">
+      <style>
+        .cta-noscript { display:flex; flex-wrap:wrap; gap:8px; padding:10px 16px; background:#f7e7e3; border-bottom:1px solid #eadedb; }
+        .cta-noscript a { display:inline-flex; align-items:center; padding:8px 12px; border-radius:6px; border:1px solid #d7c6c1; color:#5c4330; text-decoration:none; font-weight:600; }
+      </style>
+      <a href="./booking.html">예약하기</a>
+      <a href="./membership.html">회원권</a>
+      <a href="./giftcard.html">상품권</a>
+      <a href="./ai.html">AI 디자인</a>
+    </noscript>
+  </div>
 
   <header class="site-header">
     <div class="container">
@@ -88,6 +101,8 @@
     <a class="btn primary" href="https://m.place.naver.com/place/1745930795/home?entry=pll" target="_blank" rel="noopener">네이버 예약</a>
     <a class="btn" href="http://pf.kakao.com/_dgTAxj" target="_blank" rel="noopener">카카오톡 상담</a>
   </div>
+
+  <div id="global-footer-links"></div>
 
   <footer class="footer">
     <div class="container">
