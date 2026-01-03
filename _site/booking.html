@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NADI Beauty 예약</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="./assets/nav.js" defer></script>
+</head>
+<body>
+  <div id="global-nav">
+    <noscript class="cta-noscript">
+      <style>
+        .cta-noscript { display:flex; flex-wrap:wrap; gap:8px; padding:10px 16px; background:#f7e7e3; border-bottom:1px solid #eadedb; }
+        .cta-noscript a { display:inline-flex; align-items:center; padding:8px 12px; border-radius:6px; border:1px solid #d7c6c1; color:#5c4330; text-decoration:none; font-weight:600; }
+      </style>
+      <a href="./booking.html">예약하기</a>
+      <a href="./membership.html">회원권</a>
+      <a href="./giftcard.html">상품권</a>
+      <a href="./ai.html">AI 디자인</a>
+    </noscript>
+  </div>
+  <header class="hero">
+    <div class="hero-content">
+      <h1>예약하기</h1>
+      <p>원하는 시술과 시간을 선택하고 간편하게 결제하세요.</p>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="card">
+      <h2>서비스 선택</h2>
+      <select id="serviceSelect"></select>
+    </section>
+
+    <section class="card">
+      <h2>예약 정보</h2>
+      <label>날짜 <input type="date" id="dateInput"></label>
+      <label>가능한 시간대
+        <select id="slotSelect"></select>
+      </label>
+      <label>이름 <input type="text" id="nameInput" placeholder="홍길동"></label>
+      <label>휴대폰번호 <input type="tel" id="phoneInput" placeholder="010-0000-0000"></label>
+    </section>
+
+    <section class="card">
+      <h2>결제 방법</h2>
+      <div class="radio-row">
+        <label><input type="radio" name="payMethod" value="toss" checked> 토스결제</label>
+        <label><input type="radio" name="payMethod" value="wallet"> 회원권(지갑)</label>
+        <label><input type="radio" name="payMethod" value="gift"> 상품권 코드</label>
+      </div>
+      <div id="giftCodeRow" class="hidden">
+        <label>상품권 코드 <input type="text" id="giftCodeInput" placeholder="GC-XXXXXX"></label>
+      </div>
+      <button id="bookBtn" class="primary">예약 요청</button>
+      <p id="statusText" class="muted"></p>
+    </section>
+  </main>
+
+  <div id="global-footer-links"></div>
+
+  <script src="script.js"></script>
+  <script>
+    const apiBase = localStorage.getItem('nadiApiBase') || 'http://localhost:3000';
+    const serviceSelect = document.getElementById('serviceSelect');
+    const slotSelect = document.getElementById('slotSelect');
+    const dateInput = document.getElementById('dateInput');
+    const statusText = document.getElementById('statusText');
+    const giftCodeRow = document.getElementById('giftCodeRow');
+
+    fetch(`${apiBase}/api/services`).then(r => r.json()).then(list => {
+      list.forEach(s => {
+        const opt = document.createElement('option');
+        opt.value = s.id; opt.textContent = `${s.name} (${(s.price/1000).toFixed(0)}천원)`;
+        serviceSelect.appendChild(opt);
+      });
+    });
+
+    dateInput.addEventListener('change', () => loadSlots());
+
+    function loadSlots() {
+      slotSelect.innerHTML = '';
+      if (!dateInput.value) return;
+      fetch(`${apiBase}/api/availability?date=${dateInput.value}`).then(r => r.json()).then(list => {
+        if (!list.length) {
+          const opt = document.createElement('option');
+          opt.textContent = '예약 가능 시간이 없습니다';
+          slotSelect.appendChild(opt);
+        } else {
+          list.forEach(s => {
+            const opt = document.createElement('option');
+            opt.value = s.startsAt;
+            opt.textContent = `${new Date(s.startsAt).toLocaleTimeString('ko-KR', {hour:'2-digit', minute:'2-digit'})}`;
+            slotSelect.appendChild(opt);
+          });
+        }
+      });
+    }
+
+    document.querySelectorAll('input[name="payMethod"]').forEach(r => {
+      r.addEventListener('change', () => {
+        giftCodeRow.classList.toggle('hidden', r.value !== 'gift' || !r.checked);
+      });
+    });
+
+    async function lookupCustomer() {
+      const phone = document.getElementById('phoneInput').value;
+      const name = document.getElementById('nameInput').value;
+      const resp = await fetch(`${apiBase}/api/customers/lookup`, {
+        method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({phone, name})
+      });
+      return resp.json();
+    }
+
+    document.getElementById('bookBtn')?.addEventListener('click', async () => {
+      statusText.textContent = '';
+      const serviceId = serviceSelect.value;
+      const startsAt = slotSelect.value;
+      if (!serviceId || !startsAt) { statusText.textContent = '서비스와 시간을 선택해주세요'; return; }
+      const customer = await lookupCustomer();
+      const paymentMethod = document.querySelector('input[name="payMethod"]:checked').value;
+      const booking = await fetch(`${apiBase}/api/bookings`, {
+        method:'POST', headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({customerId: customer.id, serviceId, startsAt, paymentMethod})
+      }).then(r=>r.json());
+
+      if (paymentMethod === 'wallet') {
+        const walletResp = await fetch(`${apiBase}/api/bookings/${booking.id}/pay-with-wallet`, {method:'POST'});
+        const result = await walletResp.json();
+        statusText.textContent = walletResp.ok ? '지갑으로 결제 완료! 예약 확정' : result.error;
+        return;
+      }
+      if (paymentMethod === 'gift') {
+        const code = document.getElementById('giftCodeInput').value;
+        await fetch(`${apiBase}/api/wallet/redeem-giftcard`, {
+          method:'POST', headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({code, customerId: customer.id})
+        });
+        statusText.textContent = '상품권이 지갑에 충전되었습니다. 다시 지갑결제로 완료해주세요.';
+        return;
+      }
+      const paymentInit = await fetch(`${apiBase}/api/toss/init`, {
+        method:'POST', headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({bookingId: booking.id})
+      }).then(r=>r.json());
+      statusText.innerHTML = `토스 결제 금액 ${paymentInit.amount}원<br>orderId: ${paymentInit.orderId}`;
+    });
+  </script>
+</body>
+</html>
